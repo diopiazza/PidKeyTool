@@ -63,4 +63,7 @@ V9.2
 
 Support detecting win7 and Win8.1 keys under Win10
 
+V9.3  
+取消Win10下检测win7和Win8.1密钥
 
+Cancel detecting win7 and Win8.1 keys under Win10
