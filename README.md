@@ -13,7 +13,7 @@
 
 #最新版本 V8.6f
 
-![image](https://github.com/laomms/PidKeyBatch/blob/master/pidkey.png)
+![image](https://github.com/laomms/PidKeyBatch/blob/master/checks.gif)
 
 # Tool for check Microsoft Product Key for All Windows Version and All Office Version
 
