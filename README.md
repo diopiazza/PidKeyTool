@@ -17,9 +17,9 @@ V9.3
 Cancel detecting win7 and Win8.1 keys under Win10
 
 V9.5  
-支持在线检测
+支持在线检测,不依赖于系统,不依赖于证书.
 
-Support online detection
+Support online detection.Does not depend on the system, does not depend on the license.
 
 ![image](https://github.com/laomms/PidKeyBatch/blob/master/checks.gif)
 
