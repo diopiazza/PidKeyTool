@@ -1,16 +1,25 @@
 # PidKeyBatch
 密钥检测
 
-#检测微软密钥是否有效
+V9.0  
+支持已被数字权利激活的机子查询win10密钥的错误代码。
 
-#返回批量密钥次数
+Supports checking error code for the win10 key under digital activated  machine.
 
-#返回零售密钥错误代码
+V9.2  
+支持在Win10下检测win7和Win8.1密钥
 
-#自带各种证书，可以导入使用或者通过设置证书实现
+Support detecting win7 and Win8.1 keys under Win10
 
-#设置证书功能将会改变系统原有证书结构，会造成已激活证书丢失.导入证书不会.
+V9.3  
+取消Win10下检测win7和Win8.1密钥
 
+Cancel detecting win7 and Win8.1 keys under Win10
+
+V9.5  
+支持在线检测
+
+Support online detection
 
 ![image](https://github.com/laomms/PidKeyBatch/blob/master/checks.gif)
 
@@ -52,22 +61,3 @@
 
 
 
-V9.0  
-支持已被数字权利激活的机子查询win10密钥的错误代码。
-
-Supports checking error code for the win10 key under digital activated  machine.
-
-V9.2  
-支持在Win10下检测win7和Win8.1密钥
-
-Support detecting win7 and Win8.1 keys under Win10
-
-V9.3  
-取消Win10下检测win7和Win8.1密钥
-
-Cancel detecting win7 and Win8.1 keys under Win10
-
-V9.5  
-支持在线检测
-
-Support online detection
