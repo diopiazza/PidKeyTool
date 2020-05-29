@@ -1,4 +1,4 @@
-# PidKeyBatch
+# PidKeyBatch   CN/EN Version
 密钥检测
 
 V9.0  
