@@ -1,5 +1,6 @@
 # PidKeyBatch   CN/EN Version
-密钥检测
+密钥检测工具,检测结果存储于软件目录的KeyList.db数据库中,附数据库浏览工具:https://sqlitebrowser.org/dl/ .或者直接在检测工具菜单的数据库中编辑查看.    
+
 
 V9.0  
 支持已被数字权利激活的机子查询win10零售密钥的错误代码。
