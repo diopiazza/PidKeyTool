@@ -19,7 +19,7 @@ V9.3
 Cancel detecting win7 and Win8.1 keys under Win10
 
 V9.5  
-增加在线检测功能.
+解决Office在线密钥失效后本机检测依然为有效的错误提示.增加在线检测功能.
 
 Add online detection function.
 
