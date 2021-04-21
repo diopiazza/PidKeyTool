@@ -2,6 +2,8 @@
 密钥检测工具,检测结果存储于软件目录的KeyList.db数据库中,附数据库浏览工具:https://sqlitebrowser.org/dl/ .或者直接在检测工具菜单的数据库中编辑查看.    
 **注意: 本地检测请事先用证书安装器安装相应的证书.  
 
+###### MAK Key ➞ pidgenx decode ➞ Extendend PID ➞ Get count   
+###### Retal Key ➞ SLInstallProofOfPurchase(Install Key) ➞ Get pKeyId ➞ Get pSkuId ➞ SLpGetLicenseAcquisitionInfo get algorithm data ➞ post data    
 
 V9.0  
 支持已被数字权利激活的机子查询win10零售密钥的错误代码。
