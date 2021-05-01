@@ -3,7 +3,7 @@
 **注意: 本地检测请事先用证书安装器安装相应的证书: https://github.com/laomms/MSLienseInstall   
 
 ###### MAK Key ➞ pidgenx decode ➞Get Extendend PID ➞ Get count   
-###### Retal Key ➞ SLInstallProofOfPurchase(Install Key) ➞ Get pKeyId ➞ Get pSkuId ➞ SLpGetLicenseAcquisitionInfo get algorithm data ➞ post data    
+###### Retail Key ➞ SLInstallProofOfPurchase(Install Key) ➞ Get pKeyId ➞ Get pSkuId ➞ SLpGetLicenseAcquisitionInfo (get algorithm data) ➞ post xml data    
 
 V9.0  
 支持已被数字权利激活的机子查询win10零售密钥的错误代码。
