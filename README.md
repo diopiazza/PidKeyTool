@@ -6,9 +6,9 @@
 ###### Retail Key ➞ SLInstallProofOfPurchase(Install Key) ➞ Get pKeyId ➞ Get pSkuId ➞ SLpGetLicenseAcquisitionInfo (get algorithm data) ➞ post xml data    
 
 V9.0  
-支持已被数字权利激活的机子查询win10零售密钥的错误代码。
+支持已被数字权利激活的机子查询win10零售密钥的错误代码(通过hook 激活的API或者HttpWebRequest实现)。
 
-ByPass Windows 10 digital license,Supports checking error code for the win10 retail key under digital activated  machine.
+ByPass Windows 10 digital license,Supports checking error code for the win10 retail key under digital activated  machine(Achieved by hook API or HttpWebRequest).
 
 V9.2  
 支持在Win10下检测win7和Win8.1零售密钥错误代码
