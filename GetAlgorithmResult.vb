@@ -76,6 +76,7 @@ Public Class GetAlgorithmResult
         Debug.Print(envelope)
         Return envelope
     End Function
+
     Public Shared Function GetPostData2009(ByVal bytesIn() As Byte, ByRef url As String) As String
         Dim UseKeyDic As New Dictionary(Of String, String)
         Dim ClaimsDic As New Dictionary(Of String, String)
@@ -171,7 +172,8 @@ Public Class GetAlgorithmResult
         Loop
         Return BuildEnvelope("ProductActivation", UseKeyDic, ClaimsDic)
     End Function
-    Public Shared Function GetAlgorithmRCA(ByVal bytesIn() As Byte) As String 'rca
+
+    Public Shared Function GetAlgorithmRCA(ByVal bytesIn() As Byte) As String 'rca:RightsAccountCertificate
         Dim UseKeyDic As New Dictionary(Of String, String)
         Dim ClaimsDic As New Dictionary(Of String, String)
         Do While bytesIn.Length > 0
@@ -230,7 +232,8 @@ Public Class GetAlgorithmResult
         Loop
         Return BuildEnvelope("RAC", UseKeyDic, ClaimsDic)
     End Function
-    Public Shared Function GetAlgorithmPKC(ByVal bytesIn() As Byte) As String 'pkc
+
+    Public Shared Function GetAlgorithmPKC(ByVal bytesIn() As Byte) As String 'pkc:ProductKeyCertificate
         Dim UseKeyDic As New Dictionary(Of String, String)
         Dim ClaimsDic As New Dictionary(Of String, String)
         Do While bytesIn.Length > 0
@@ -265,7 +268,8 @@ Public Class GetAlgorithmResult
         Loop
         Return BuildEnvelope("PKC", UseKeyDic, ClaimsDic)
     End Function
-    Public Shared Function GetAlgorithmEUL(ByVal bytesIn() As Byte) As String 'eul
+
+    Public Shared Function GetAlgorithmEUL(ByVal bytesIn() As Byte) As String 'eul:UseLicense
         Dim UseKeyDic As New Dictionary(Of String, String)
         Dim ClaimsDic As New Dictionary(Of String, String)
         Dim offset_start = 0
