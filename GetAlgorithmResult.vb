@@ -10,7 +10,6 @@ Public Class GetAlgorithmResult
         Public cbSizeName As Integer
         Public cbSizeValue As Integer
     End Structure
-
     Public Shared Function BuildEnvelope(TokenType As String, UseKeyDic As Dictionary(Of String, String), ClaimsDic As Dictionary(Of String, String)) As String
         Dim envelope As String = Nothing
         Using stream = New MemoryStream()
@@ -77,7 +76,6 @@ Public Class GetAlgorithmResult
         Debug.Print(envelope)
         Return envelope
     End Function
-
     Public Shared Function GetPostData2009(ByVal bytesIn() As Byte, ByRef url As String) As String
         Dim UseKeyDic As New Dictionary(Of String, String)
         Dim ClaimsDic As New Dictionary(Of String, String)
@@ -88,93 +86,21 @@ Public Class GetAlgorithmResult
             Dim pResult As AcquisitionInfo = CType(Marshal.PtrToStructure(buffer, GetType(AcquisitionInfo)), AcquisitionInfo)
             Dim szKey = Encoding.Unicode.GetString(bytesIn, 16, pResult.cbSizeName - 2).Trim
             Dim offsetKey = ((pResult.cbSizeName + 7) And Not 7) - pResult.cbSizeName
-            Debug.Print(szKey.Length.ToString + ":" + szKey)
-            If szKey = "0:SessionKey" Then
-                Dim szValue = Encoding.Unicode.GetString(bytesIn, 16 + pResult.cbSizeName + offsetKey, pResult.cbSizeValue - 2).Trim '30H
-                Debug.Print(szValue.Length.ToString + ":" + szValue + vbNewLine)
+            Dim szValue = Encoding.Unicode.GetString(bytesIn, 16 + pResult.cbSizeName + offsetKey, pResult.cbSizeValue - 2).Trim '30H
+            Debug.Print("Key=" + szKey + " Value=" + szValue)
+            If szKey.StartsWith("0:") Then
                 ClaimsDic.Add(szKey.Replace("0:", "").Trim, szValue)
-            ElseIf szKey = "0:BindingType" Then
-                Dim szValue = Encoding.Unicode.GetString(bytesIn, 16 + pResult.cbSizeName + offsetKey, pResult.cbSizeValue - 2).Trim
-                Debug.Print(szValue.Length.ToString + ":" + szValue)
-                ClaimsDic.Add(szKey.Replace("0:", ""), szValue)
-            ElseIf szKey = "0:Binding" Then
-                Dim szValue = Encoding.Unicode.GetString(bytesIn, 16 + pResult.cbSizeName + offsetKey, pResult.cbSizeValue - 2).Trim
-                Debug.Print(szValue.Length.ToString + ":" + szValue)
-                ClaimsDic.Add(szKey.Replace("0:", ""), szValue)
-            ElseIf szKey = "0:ProductKey" Then
-                Dim szValue = Encoding.Unicode.GetString(bytesIn, 16 + pResult.cbSizeName + offsetKey, pResult.cbSizeValue - 2).Trim
-                Debug.Print(szValue.Length.ToString + ":" + szValue)
-                ClaimsDic.Add(szKey.Replace("0:", ""), szValue)
-            ElseIf szKey = "0:ProductKeyType" Then
-                Dim szValue = Encoding.Unicode.GetString(bytesIn, 16 + pResult.cbSizeName + offsetKey, pResult.cbSizeValue - 2).Trim
-                Debug.Print(szValue.Length.ToString + ":" + szValue)
-                ClaimsDic.Add(szKey.Replace("0:", ""), szValue)
-            ElseIf szKey = "0:ProductKeyActConfigId" Then
-                Dim szValue = Encoding.Unicode.GetString(bytesIn, 16 + pResult.cbSizeName + offsetKey, pResult.cbSizeValue - 2).Trim
-                Debug.Print(szValue.Length.ToString + ":" + szValue)
-                ClaimsDic.Add(szKey.Replace("0:", ""), szValue)
-            ElseIf szKey = "0:SppSvcVersion" Then
-                Dim szValue = Encoding.Unicode.GetString(bytesIn, 16 + pResult.cbSizeName + offsetKey, pResult.cbSizeValue - 2).Trim
-                Debug.Print(szValue.Length.ToString + ":" + szValue + vbNewLine)
-                ClaimsDic.Add(szKey.Replace("0:", ""), szValue)
-            ElseIf szKey = "1:PublishLicense" Then
-                Dim szValue = Encoding.Unicode.GetString(bytesIn, 16 + pResult.cbSizeName + offsetKey, pResult.cbSizeValue - 2).Trim
-                Debug.Print(szValue.Length.ToString + ":" + szValue + vbNewLine)
+            ElseIf szKey.StartsWith("1:") Then
                 UseKeyDic.Add(szKey.Replace("1:", ""), szValue)
-            ElseIf szKey = "0:otherInfoPublic.licenseCategory" Then
-                Dim szValue = Encoding.Unicode.GetString(bytesIn, 16 + pResult.cbSizeName + offsetKey, pResult.cbSizeValue - 2).Trim
-                Debug.Print(szValue.Length.ToString + ":" + szValue + vbNewLine)
-                ClaimsDic.Add(szKey.Replace("0:", ""), szValue)
-            ElseIf szKey = "0:otherInfoPrivate.licenseCategory" Then
-                Dim szValue = Encoding.Unicode.GetString(bytesIn, 16 + pResult.cbSizeName + offsetKey, pResult.cbSizeValue - 2).Trim
-                Debug.Print(szValue.Length.ToString + ":" + szValue + vbNewLine)
-                ClaimsDic.Add(szKey.Replace("0:", ""), szValue)
-            ElseIf szKey = "0:otherInfoPublic.sysprepAction" Then
-                Dim szValue = Encoding.Unicode.GetString(bytesIn, 16 + pResult.cbSizeName + offsetKey, pResult.cbSizeValue - 2).Trim
-                Debug.Print(szValue.Length.ToString + ":" + szValue + vbNewLine)
-                ClaimsDic.Add(szKey.Replace("0:", ""), szValue)
-            ElseIf szKey = "0:otherInfoPrivate.sysprepAction" Then
-                Dim szValue = Encoding.Unicode.GetString(bytesIn, 16 + pResult.cbSizeName + offsetKey, pResult.cbSizeValue - 2).Trim
-                Debug.Print(szValue.Length.ToString + ":" + szValue + vbNewLine)
-                ClaimsDic.Add(szKey.Replace("0:", ""), szValue)
-            ElseIf szKey = "SppLAPServerURL" Then
-                url = Encoding.Unicode.GetString(bytesIn, 16 + pResult.cbSizeName + offsetKey, pResult.cbSizeValue - 2).Trim
-                Debug.Print(url + vbNewLine)
-            ElseIf szKey = "SppLAPRequestTokenType" Then
-                Dim szValue = Encoding.Unicode.GetString(bytesIn, 16 + pResult.cbSizeName + offsetKey, pResult.cbSizeValue - 2).Trim
-                Debug.Print(szValue.Length.ToString + ":" + szValue + vbNewLine)
-            ElseIf szKey = "0:ClientInformation" Then
-                Dim szValue = Encoding.Unicode.GetString(bytesIn, 16 + pResult.cbSizeName + offsetKey, pResult.cbSizeValue - 2).Trim
-                Debug.Print(szValue.Length.ToString + ":" + szValue + vbNewLine)
-                ClaimsDic.Add(szKey.Replace("0:", ""), szValue)
-            ElseIf szKey = "0:ReferralInformation" Then
-                Dim szValue = Encoding.Unicode.GetString(bytesIn, 16 + pResult.cbSizeName + offsetKey, pResult.cbSizeValue - 2).Trim
-                Debug.Print(szValue.Length.ToString + ":" + szValue + vbNewLine)
-                ClaimsDic.Add(szKey.Replace("0:", ""), szValue)
-            ElseIf szKey = "0:ClientSystemTime" Then
-                Dim szValue = Encoding.Unicode.GetString(bytesIn, 16 + pResult.cbSizeName + offsetKey, pResult.cbSizeValue - 2).Trim
-                Debug.Print(szValue.Length.ToString + ":" + szValue + vbNewLine)
-                ClaimsDic.Add(szKey.Replace("0:", ""), szValue)
-            ElseIf szKey = "0:ClientSystemTimeUtc" Then
-                Dim szValue = Encoding.Unicode.GetString(bytesIn, 16 + pResult.cbSizeName + offsetKey, pResult.cbSizeValue - 2).Trim
-                Debug.Print(szValue.Length.ToString + ":" + szValue + vbNewLine)
-                ClaimsDic.Add(szKey.Replace("0:", ""), szValue)
-            ElseIf szKey = "0:otherInfoPublic.secureStoreId" Then
-                Dim szValue = Encoding.Unicode.GetString(bytesIn, 16 + pResult.cbSizeName + offsetKey, pResult.cbSizeValue - 2).Trim
-                Debug.Print(szValue.Length.ToString + ":" + szValue + vbNewLine)
-                ClaimsDic.Add(szKey.Replace("0:", ""), szValue)
-            ElseIf szKey = "0:otherInfoPrivate.secureStoreId" Then
-                Dim szValue = Encoding.Unicode.GetString(bytesIn, 16 + pResult.cbSizeName + offsetKey, pResult.cbSizeValue - 2).Trim
-                Debug.Print(szValue.Length.ToString + ":" + szValue + vbNewLine)
-                ClaimsDic.Add(szKey.Replace("0:", ""), szValue)
+            ElseIf szKey.Contains("SppLAPServerURL") Then
+                url = szValue
             End If
             Dim offsetValue = ((pResult.cbSizeValue + 7) And Not 7) - pResult.cbSizeValue
             bytesIn = bytesIn.Skip(&H10 + pResult.cbSizeName + offsetKey + pResult.cbSizeValue + offsetValue).ToArray
         Loop
         Return BuildEnvelope("ProductActivation", UseKeyDic, ClaimsDic)
     End Function
-
-    Public Shared Function GetAlgorithmRCA(ByVal bytesIn() As Byte) As String 'rca:RightsAccountCertificate
+    Public Shared Function GetAlgorithmRCA(ByVal bytesIn() As Byte, ByRef url As String) As String 'rca:RightsAccountCertificate
         Dim UseKeyDic As New Dictionary(Of String, String)
         Dim ClaimsDic As New Dictionary(Of String, String)
         Do While bytesIn.Length > 0
@@ -183,58 +109,22 @@ Public Class GetAlgorithmResult
             Marshal.Copy(bytesIn, 0, buffer, size)
             Dim pResult As AcquisitionInfo = CType(Marshal.PtrToStructure(buffer, GetType(AcquisitionInfo)), AcquisitionInfo)
             Dim szKey = Encoding.Unicode.GetString(bytesIn, 16, pResult.cbSizeName - 2).Trim
-            Debug.Print(szKey.Length.ToString + ":" + szKey)
             Dim offsetKey = ((pResult.cbSizeName + 7) And Not 7) - pResult.cbSizeName
-            If szKey = "0:BindingType" Then
-                Dim szValue = Encoding.Unicode.GetString(bytesIn, 16 + pResult.cbSizeName + offsetKey, pResult.cbSizeValue - 2).Trim
-                Debug.Print(szValue.Length.ToString + ":" + szValue)
-                ClaimsDic.Add(szKey.Replace("0:", ""), szValue)
-            ElseIf szKey = "0:Binding" Then
-                Dim szValue = Encoding.Unicode.GetString(bytesIn, 16 + pResult.cbSizeName + offsetKey, pResult.cbSizeValue - 2).Trim
-                Debug.Print(szValue.Length.ToString + ":" + szValue)
-                ClaimsDic.Add(szKey.Replace("0:", ""), szValue)
-            ElseIf szKey = "1:SPCPublicCertificate" Then 'SecurityProcessorCertificate
-                Dim SecurityProcessorCertificate = Encoding.Unicode.GetString(bytesIn, 16 + pResult.cbSizeName + offsetKey, pResult.cbSizeValue - 2).Trim
-                Debug.Print(SecurityProcessorCertificate.Length.ToString + ":" + SecurityProcessorCertificate)
-                UseKeyDic.Add(szKey.Replace("1:", ""), SecurityProcessorCertificate)
-            ElseIf szKey = "0:otherInfoPublic.licenseCategory" Then
-                Dim szValue = Encoding.Unicode.GetString(bytesIn, 16 + pResult.cbSizeName + offsetKey, pResult.cbSizeValue - 2).Trim
-                Debug.Print(szValue.Length.ToString + ":" + szValue + vbNewLine)
-                ClaimsDic.Add(szKey.Replace("0:", ""), szValue)
-            ElseIf szKey = "0:otherInfoPrivate.licenseCategory" Then
-                Dim szValue = Encoding.Unicode.GetString(bytesIn, 16 + pResult.cbSizeName + offsetKey, pResult.cbSizeValue - 2).Trim
-                Debug.Print(szValue.Length.ToString + ":" + szValue + vbNewLine)
-                ClaimsDic.Add(szKey.Replace("0:", ""), szValue)
-            ElseIf szKey = "0:otherInfoPublic.sysprepAction" Then
-                Dim szValue = Encoding.Unicode.GetString(bytesIn, 16 + pResult.cbSizeName + offsetKey, pResult.cbSizeValue - 2).Trim
-                Debug.Print(szValue.Length.ToString + ":" + szValue + vbNewLine)
-                ClaimsDic.Add(szKey.Replace("0:", ""), szValue)
-            ElseIf szKey = "0:otherInfoPrivate.sysprepAction" Then
-                Dim szValue = Encoding.Unicode.GetString(bytesIn, 16 + pResult.cbSizeName + offsetKey, pResult.cbSizeValue - 2).Trim
-                Debug.Print(szValue.Length.ToString + ":" + szValue + vbNewLine)
-                ClaimsDic.Add(szKey.Replace("0:", ""), szValue)
-            ElseIf szKey = "0:otherInfoPublic.racActivationGroup" Then
-                Dim szValue = Encoding.Unicode.GetString(bytesIn, 16 + pResult.cbSizeName + offsetKey, pResult.cbSizeValue - 2).Trim
-                Debug.Print(szValue.Length.ToString + ":" + szValue + vbNewLine)
-                ClaimsDic.Add(szKey.Replace("0:", ""), szValue)
-            ElseIf szKey = "0:otherInfoPrivate.racActivationGroup" Then
-                Dim szValue = Encoding.Unicode.GetString(bytesIn, 16 + pResult.cbSizeName + offsetKey, pResult.cbSizeValue - 2).Trim
-                Debug.Print(szValue.Length.ToString + ":" + szValue + vbNewLine)
-                ClaimsDic.Add(szKey.Replace("0:", ""), szValue)
-            ElseIf szKey = "SppLAPServerURL" Then
-                Dim url = Encoding.Unicode.GetString(bytesIn, 16 + pResult.cbSizeName + offsetKey, pResult.cbSizeValue - 2).Trim
-                Debug.Print(url + vbNewLine) 'http://go.microsoft.com/fwlink/?LinkID=88339
-            ElseIf szKey = "SppLAPRequestTokenType" Then
-                Dim szValue = Encoding.Unicode.GetString(bytesIn, 16 + pResult.cbSizeName + offsetKey, pResult.cbSizeValue - 2).Trim
-                Debug.Print(szValue.Length.ToString + ":" + szValue + vbNewLine)
+            Dim szValue = Encoding.Unicode.GetString(bytesIn, 16 + pResult.cbSizeName + offsetKey, pResult.cbSizeValue - 2).Trim '30H
+            Debug.Print("Key=" + szKey + " Value=" + szValue)
+            If szKey.StartsWith("0:") Then
+                ClaimsDic.Add(szKey.Replace("0:", "").Trim, szValue)
+            ElseIf szKey.StartsWith("1:") Then
+                UseKeyDic.Add(szKey.Replace("1:", ""), szValue)
+            ElseIf szKey.Contains("SppLAPServerURL") Then
+                url = szValue
             End If
             Dim offsetValue = ((pResult.cbSizeValue + 7) And Not 7) - pResult.cbSizeValue
             bytesIn = bytesIn.Skip(&H10 + pResult.cbSizeName + offsetKey + pResult.cbSizeValue + offsetValue).ToArray
         Loop
         Return BuildEnvelope("RAC", UseKeyDic, ClaimsDic)
     End Function
-
-    Public Shared Function GetAlgorithmPKC(ByVal bytesIn() As Byte) As String 'pkc:ProductKeyCertificate
+    Public Shared Function GetAlgorithmPKC(ByVal bytesIn() As Byte, ByRef url As String) As String 'pkc:ProductKeyCertificate
         Dim UseKeyDic As New Dictionary(Of String, String)
         Dim ClaimsDic As New Dictionary(Of String, String)
         Do While bytesIn.Length > 0
@@ -243,34 +133,22 @@ Public Class GetAlgorithmResult
             Marshal.Copy(bytesIn, 0, buffer, size)
             Dim pResult As AcquisitionInfo = CType(Marshal.PtrToStructure(buffer, GetType(AcquisitionInfo)), AcquisitionInfo)
             Dim szKey = Encoding.Unicode.GetString(bytesIn, 16, pResult.cbSizeName - 2).Trim
-            Debug.Print(szKey.Length.ToString + ":" + szKey)
             Dim offsetKey = ((pResult.cbSizeName + 7) And Not 7) - pResult.cbSizeName
-            If szKey = "0:ProductKey" Then
-                Dim szValue = Encoding.Unicode.GetString(bytesIn, 16 + pResult.cbSizeName + offsetKey, pResult.cbSizeValue - 2).Trim
-                Debug.Print(szValue.Length.ToString + ":" + szValue)
-                ClaimsDic.Add(szKey.Replace("0:", ""), szValue)
-            ElseIf szKey = "0:ProductKeyType" Then
-                Dim szValue = Encoding.Unicode.GetString(bytesIn, 16 + pResult.cbSizeName + offsetKey, pResult.cbSizeValue - 2).Trim
-                Debug.Print(szValue.Length.ToString + ":" + szValue)
-                ClaimsDic.Add(szKey.Replace("0:", ""), szValue)
-            ElseIf szKey = "0:ProductKeyActConfigId" Then
-                Dim szValue = Encoding.Unicode.GetString(bytesIn, 16 + pResult.cbSizeName + offsetKey, pResult.cbSizeValue - 2).Trim
-                Debug.Print(szValue.Length.ToString + ":" + szValue)
-                ClaimsDic.Add(szKey.Replace("0:", ""), szValue)
-            ElseIf szKey = "SppLAPServerURL" Then
-                Dim url = Encoding.Unicode.GetString(bytesIn, 16 + pResult.cbSizeName + offsetKey, pResult.cbSizeValue - 2).Trim
-                Debug.Print(url + vbNewLine)
-            ElseIf szKey = "SppLAPRequestTokenType" Then
-                Dim szValue = Encoding.Unicode.GetString(bytesIn, 16 + pResult.cbSizeName + offsetKey, pResult.cbSizeValue - 2).Trim
-                Debug.Print(szValue.Length.ToString + ":" + szValue + vbNewLine)
+            Dim szValue = Encoding.Unicode.GetString(bytesIn, 16 + pResult.cbSizeName + offsetKey, pResult.cbSizeValue - 2).Trim '30H
+            Debug.Print("Key=" + szKey + " Value=" + szValue)
+            If szKey.StartsWith("0:") Then
+                ClaimsDic.Add(szKey.Replace("0:", "").Trim, szValue)
+            ElseIf szKey.StartsWith("1:") Then
+                UseKeyDic.Add(szKey.Replace("1:", ""), szValue)
+            ElseIf szKey.Contains("SppLAPServerURL") Then
+                url = szValue
             End If
             Dim offsetValue = ((pResult.cbSizeValue + 7) And Not 7) - pResult.cbSizeValue
             bytesIn = bytesIn.Skip(&H10 + pResult.cbSizeName + offsetKey + pResult.cbSizeValue + offsetValue).ToArray
         Loop
         Return BuildEnvelope("PKC", UseKeyDic, ClaimsDic)
     End Function
-
-    Public Shared Function GetAlgorithmEUL(ByVal bytesIn() As Byte) As String 'eul:UseLicense
+    Public Shared Function GetAlgorithmEUL(ByVal bytesIn() As Byte, ByRef url As String) As String 'eul:UseLicense
         Dim UseKeyDic As New Dictionary(Of String, String)
         Dim ClaimsDic As New Dictionary(Of String, String)
         Dim offset_start = 0
@@ -280,69 +158,15 @@ Public Class GetAlgorithmResult
             Marshal.Copy(bytesIn, offset_start, buffer, size)
             Dim pResult As AcquisitionInfo = CType(Marshal.PtrToStructure(buffer, GetType(AcquisitionInfo)), AcquisitionInfo)
             Dim szKey = Encoding.Unicode.GetString(bytesIn, 16, pResult.cbSizeName - 2).Trim
-            Debug.Print(szKey.Length.ToString + ":" + szKey)
             Dim offsetKey = ((pResult.cbSizeName + 7) And Not 7) - pResult.cbSizeName
-            If szKey = "1:SecurityProcessorCertificate" Then
-                Dim szValue = Encoding.Unicode.GetString(bytesIn, 16 + pResult.cbSizeName + offsetKey, pResult.cbSizeValue - 2).Trim
-                Debug.Print(szValue.Length.ToString + ":" + szValue)
+            Dim szValue = Encoding.Unicode.GetString(bytesIn, 16 + pResult.cbSizeName + offsetKey, pResult.cbSizeValue - 2).Trim '30H
+            Debug.Print("Key=" + szKey + " Value=" + szValue)
+            If szKey.StartsWith("0:") Then
+                ClaimsDic.Add(szKey.Replace("0:", "").Trim, szValue)
+            ElseIf szKey.StartsWith("1:") Then
                 UseKeyDic.Add(szKey.Replace("1:", ""), szValue)
-            ElseIf szKey = "1:RightsAccountCertificate" Then
-                Dim szValue = Encoding.Unicode.GetString(bytesIn, 16 + pResult.cbSizeName + offsetKey, pResult.cbSizeValue - 2).Trim
-                Debug.Print(szValue.Length.ToString + ":" + szValue)
-                UseKeyDic.Add(szKey.Replace("1:", ""), szValue)
-            ElseIf szKey = "1:ProductKeyCertificate" Then
-                Dim szValue = Encoding.Unicode.GetString(bytesIn, 16 + pResult.cbSizeName + offsetKey, pResult.cbSizeValue - 2).Trim
-                Debug.Print(szValue.Length.ToString + ":" + szValue)
-                UseKeyDic.Add(szKey.Replace("1:", ""), szValue)
-            ElseIf szKey = "1:PublishLicense" Then
-                Dim szValue = Encoding.Unicode.GetString(bytesIn, 16 + pResult.cbSizeName + offsetKey, pResult.cbSizeValue - 2).Trim
-                Debug.Print(szValue.Length.ToString + ":" + szValue)
-                UseKeyDic.Add(szKey.Replace("1:", ""), szValue)
-            ElseIf szKey = "0:otherInfoPublic.licenseCategory" Then
-                Dim szValue = Encoding.Unicode.GetString(bytesIn, 16 + pResult.cbSizeName + offsetKey, pResult.cbSizeValue - 2).Trim
-                Debug.Print(szValue.Length.ToString + ":" + szValue + vbNewLine)
-                ClaimsDic.Add(szKey.Replace("0:", ""), szValue)
-            ElseIf szKey = "0:otherInfoPrivate.licenseCategory" Then
-                Dim szValue = Encoding.Unicode.GetString(bytesIn, 16 + pResult.cbSizeName + offsetKey, pResult.cbSizeValue - 2).Trim
-                Debug.Print(szValue.Length.ToString + ":" + szValue + vbNewLine)
-                ClaimsDic.Add(szKey.Replace("0:", ""), szValue)
-            ElseIf szKey = "0:otherInfoPublic.sysprepAction" Then
-                Dim szValue = Encoding.Unicode.GetString(bytesIn, 16 + pResult.cbSizeName + offsetKey, pResult.cbSizeValue - 2).Trim
-                Debug.Print(szValue.Length.ToString + ":" + szValue + vbNewLine)
-                ClaimsDic.Add(szKey.Replace("0:", ""), szValue)
-            ElseIf szKey = "0:otherInfoPrivate.sysprepAction" Then
-                Dim szValue = Encoding.Unicode.GetString(bytesIn, 16 + pResult.cbSizeName + offsetKey, pResult.cbSizeValue - 2).Trim
-                Debug.Print(szValue.Length.ToString + ":" + szValue + vbNewLine)
-                ClaimsDic.Add(szKey.Replace("0:", ""), szValue)
-            ElseIf szKey = "SppLAPServerURL" Then
-                Dim url = Encoding.Unicode.GetString(bytesIn, 16 + pResult.cbSizeName + offsetKey, pResult.cbSizeValue - 2).Trim
-                Debug.Print(url + vbNewLine)
-            ElseIf szKey = "SppLAPRequestTokenType" Then
-                Dim szValue = Encoding.Unicode.GetString(bytesIn, 16 + pResult.cbSizeName + offsetKey, pResult.cbSizeValue - 2).Trim
-                Debug.Print(szValue.Length.ToString + ":" + szValue + vbNewLine)
-            ElseIf szKey = "0:ClientInformation" Then
-                Dim szValue = Encoding.Unicode.GetString(bytesIn, 16 + pResult.cbSizeName + offsetKey, pResult.cbSizeValue - 2).Trim
-                Debug.Print(szValue.Length.ToString + ":" + szValue + vbNewLine)
-                ClaimsDic.Add(szKey.Replace("0:", ""), szValue)
-            ElseIf szKey = "0:ReferralInformation" Then
-                Dim szValue = Encoding.Unicode.GetString(bytesIn, 16 + pResult.cbSizeName + offsetKey, pResult.cbSizeValue - 2).Trim
-                Debug.Print(szValue.Length.ToString + ":" + szValue + vbNewLine)
-                ClaimsDic.Add(szKey.Replace("0:", ""), szValue)
-            ElseIf szKey = "0:ClientSystemTime" Then
-                Dim szValue = Encoding.Unicode.GetString(bytesIn, 16 + pResult.cbSizeName + offsetKey, pResult.cbSizeValue - 2).Trim
-                Debug.Print(szValue.Length.ToString + ":" + szValue + vbNewLine)
-                ClaimsDic.Add(szKey.Replace("0:", ""), szValue)
-            ElseIf szKey = "0:ClientSystemTimeUtc" Then
-                Dim szValue = Encoding.Unicode.GetString(bytesIn, 16 + pResult.cbSizeName + offsetKey, pResult.cbSizeValue - 2).Trim
-                Debug.Print(szValue.Length.ToString + ":" + szValue + vbNewLine)
-                ClaimsDic.Add(szKey.Replace("0:", ""), szValue)
-            ElseIf szKey = "0:otherInfoPublic.secureStoreId" Then
-                Dim szValue = Encoding.Unicode.GetString(bytesIn, 16 + pResult.cbSizeName + offsetKey, pResult.cbSizeValue - 2).Trim
-                Debug.Print(szValue.Length.ToString + ":" + szValue + vbNewLine)
-                ClaimsDic.Add(szKey.Replace("0:", ""), szValue)
-            ElseIf szKey = "0:otherInfoPrivate.secureStoreId" Then
-                Dim szValue = Encoding.Unicode.GetString(bytesIn, 16 + pResult.cbSizeName + offsetKey, pResult.cbSizeValue - 2).Trim
-                Debug.Print(szValue.Length.ToString + ":" + szValue + vbNewLine)
+            ElseIf szKey.Contains("SppLAPServerURL") Then
+                url = szValue
             End If
             Dim offsetValue = ((pResult.cbSizeValue + 7) And Not 7) - pResult.cbSizeValue
             bytesIn = bytesIn.Skip(&H10 + pResult.cbSizeName + offsetKey + pResult.cbSizeValue + offsetValue).ToArray
