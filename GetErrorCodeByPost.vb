@@ -4,7 +4,8 @@ Imports System.Web
 Imports System.Xml
 
 Module GetErrorCodeByPost
-    Public Function GetRightsAccountCertificate(ByVal url As String, ByVal SOAPAction As String, ByVal requestXml As String) As String
+    
+    Public Function GetCertificate(ByVal url As String, ByVal SOAPAction As String, ByVal requestXml As String) As String
         Dim request As HttpWebRequest = WebRequest.Create(url)
         Dim bytes() As Byte
         bytes = System.Text.Encoding.ASCII.GetBytes(requestXml)
@@ -46,6 +47,7 @@ Module GetErrorCodeByPost
             Return responseXML
         End Try
     End Function
+    
     Public Function GetErrorCode2009(ByVal url As String, ByVal requestXml As String) As String
         Dim request As HttpWebRequest = WebRequest.Create(url)
         Dim bytes() As Byte
@@ -89,6 +91,7 @@ Module GetErrorCodeByPost
         End Try
 
     End Function
+    
     Public Function GetErrorCode2005(ByVal url As String, ByVal requestXml As String) As String
         Dim request As HttpWebRequest = WebRequest.Create("https://activation.sls.microsoft.com/sllicensing/SLLicense.asmx")
         Dim bytes() As Byte
