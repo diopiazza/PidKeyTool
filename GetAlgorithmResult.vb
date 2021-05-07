@@ -10,6 +10,7 @@ Public Class GetAlgorithmResult
         Public cbSizeName As Integer
         Public cbSizeValue As Integer
     End Structure
+
     Public Shared Function BuildEnvelope(TokenType As String, UseKeyDic As Dictionary(Of String, String), ClaimsDic As Dictionary(Of String, String)) As String
         Dim envelope As String = Nothing
         Using stream = New MemoryStream()
