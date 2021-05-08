@@ -1,10 +1,9 @@
-﻿Imports System.IO
+Imports System.IO
 Imports System.Net
 Imports System.Web
 Imports System.Xml
 
 Module GetErrorCodeByPost
-    
     Public Function GetCertificate(ByVal url As String, ByVal SOAPAction As String, ByVal requestXml As String) As String
         Dim request As HttpWebRequest = WebRequest.Create(url)
         Dim bytes() As Byte
@@ -46,9 +45,9 @@ Module GetErrorCodeByPost
             Dim responseXML As String = soapReader.ReadElementContentAsString()
             Return responseXML
         End Try
+
     End Function
-    
-    Public Function GetErrorCode2009(ByVal url As String, ByVal requestXml As String) As String
+    Public Function GetErrorCode(ByVal url As String, pKeyAlgorithm As String, ByVal requestXml As String) As String
         Dim request As HttpWebRequest = WebRequest.Create(url)
         Dim bytes() As Byte
         bytes = System.Text.Encoding.ASCII.GetBytes(requestXml)
@@ -56,7 +55,11 @@ Module GetErrorCodeByPost
         request.KeepAlive = True
         request.ContentType = "text/xml; charset=utf-8"
         request.UserAgent = "SLSSoapClient"
-        request.Headers.Add("SOAPAction", "http://microsoft.com/SL/ProductActivationService/IssueToken")
+        If pKeyAlgorithm.Contains("2005") Then
+            request.Headers.Add("SOAPAction", "http://microsoft.com/SL/LicensingService/IssueToken")
+        Else
+            request.Headers.Add("SOAPAction", "http://microsoft.com/SL/ProductActivationService/IssueToken")
+        End If
         request.ContentLength = bytes.Length
         request.Method = "POST"
         Dim requestStream As Stream = request.GetRequestStream()
@@ -89,43 +92,6 @@ Module GetErrorCodeByPost
             Dim responseXML As String = soapReader.ReadElementContentAsString()
             Return responseXML
         End Try
-
-    End Function
-    
-    Public Function GetErrorCode2005(ByVal url As String, ByVal requestXml As String) As String
-        Dim request As HttpWebRequest = WebRequest.Create("https://activation.sls.microsoft.com/sllicensing/SLLicense.asmx")
-        Dim bytes() As Byte
-        bytes = System.Text.Encoding.ASCII.GetBytes(requestXml)
-        request.Accept = "text/*"
-        request.KeepAlive = True
-        request.ContentType = "text/xml; charset=utf-8"
-        request.UserAgent = "SLSSoapClient"
-        request.Headers.Add("SOAPAction", "http://microsoft.com/SL/LicensingService/IssueToken")
-        request.ContentLength = bytes.Length
-        request.Method = "POST"
-        Dim requestStream As Stream = request.GetRequestStream()
-        requestStream.Write(bytes, 0, bytes.Length)
-        requestStream.Close()
-        Dim response As HttpWebResponse = Nothing
-        Dim result = ""
-        Try
-            response = CType(request.GetResponse(), HttpWebResponse)
-            If response.StatusCode = HttpStatusCode.OK Then
-                Dim responseStream As Stream = response.GetResponseStream()
-                result = (New StreamReader(responseStream)).ReadToEnd()
-            End If
-        Catch ex As WebException
-            Dim exMessage As String = ex.Message
-            If ex.Response IsNot Nothing Then
-                Dim responseReader = New StreamReader(ex.Response.GetResponseStream())
-                result = responseReader.ReadToEnd()
-            End If
-        End Try
-        Using soapReader As XmlReader = XmlReader.Create(New StringReader(result))
-            soapReader.ReadToFollowing("HRESULT")
-            Dim responseXML As String = soapReader.ReadElementContentAsString()
-            Return responseXML
-        End Using
     End Function
 
 End Module
