@@ -2,6 +2,8 @@ Imports System.IO
 Imports System.Linq
 Imports System.Runtime.InteropServices
 Imports System.Text
+Imports System.Threading
+Imports System.Web
 Imports System.Xml
 
 Public Class GetAlgorithmResult
@@ -10,6 +12,7 @@ Public Class GetAlgorithmResult
         Public cbSizeName As Integer
         Public cbSizeValue As Integer
     End Structure
+
     Public Shared Function BuildEnvelope(TokenType As String, UseKeyDic As Dictionary(Of String, String), ClaimsDic As Dictionary(Of String, String)) As String
         Dim envelope As String = Nothing
         Using stream = New MemoryStream()
@@ -76,7 +79,7 @@ Public Class GetAlgorithmResult
         Debug.Print(envelope)
         Return envelope
     End Function
-    Public Shared Function GetPostData2009(ByVal bytesIn() As Byte, ByRef url As String) As String
+    Public Shared Function GetAlgorithm(ByVal bytesIn() As Byte, TokenType As String, ByRef url As String) As String 'SPC,RCA,PKC,EUL,ProductActivation
         Dim UseKeyDic As New Dictionary(Of String, String)
         Dim ClaimsDic As New Dictionary(Of String, String)
         Do While bytesIn.Length > 0
@@ -98,80 +101,7 @@ Public Class GetAlgorithmResult
             Dim offsetValue = ((pResult.cbSizeValue + 7) And Not 7) - pResult.cbSizeValue
             bytesIn = bytesIn.Skip(&H10 + pResult.cbSizeName + offsetKey + pResult.cbSizeValue + offsetValue).ToArray
         Loop
-        Return BuildEnvelope("ProductActivation", UseKeyDic, ClaimsDic)
-    End Function
-    Public Shared Function GetAlgorithmRCA(ByVal bytesIn() As Byte, ByRef url As String) As String 'rca:RightsAccountCertificate
-        Dim UseKeyDic As New Dictionary(Of String, String)
-        Dim ClaimsDic As New Dictionary(Of String, String)
-        Do While bytesIn.Length > 0
-            Dim size As Integer = Marshal.SizeOf(GetType(AcquisitionInfo))
-            Dim buffer As IntPtr = Marshal.AllocHGlobal(size)
-            Marshal.Copy(bytesIn, 0, buffer, size)
-            Dim pResult As AcquisitionInfo = CType(Marshal.PtrToStructure(buffer, GetType(AcquisitionInfo)), AcquisitionInfo)
-            Dim szKey = Encoding.Unicode.GetString(bytesIn, 16, pResult.cbSizeName - 2).Trim
-            Dim offsetKey = ((pResult.cbSizeName + 7) And Not 7) - pResult.cbSizeName
-            Dim szValue = Encoding.Unicode.GetString(bytesIn, 16 + pResult.cbSizeName + offsetKey, pResult.cbSizeValue - 2).Trim '30H
-            Debug.Print("Key=" + szKey + " Value=" + szValue)
-            If szKey.StartsWith("0:") Then
-                ClaimsDic.Add(szKey.Replace("0:", "").Trim, szValue)
-            ElseIf szKey.StartsWith("1:") Then
-                UseKeyDic.Add(szKey.Replace("1:", ""), szValue)
-            ElseIf szKey.Contains("SppLAPServerURL") Then
-                url = szValue
-            End If
-            Dim offsetValue = ((pResult.cbSizeValue + 7) And Not 7) - pResult.cbSizeValue
-            bytesIn = bytesIn.Skip(&H10 + pResult.cbSizeName + offsetKey + pResult.cbSizeValue + offsetValue).ToArray
-        Loop
-        Return BuildEnvelope("RAC", UseKeyDic, ClaimsDic)
-    End Function
-    Public Shared Function GetAlgorithmPKC(ByVal bytesIn() As Byte, ByRef url As String) As String 'pkc:ProductKeyCertificate
-        Dim UseKeyDic As New Dictionary(Of String, String)
-        Dim ClaimsDic As New Dictionary(Of String, String)
-        Do While bytesIn.Length > 0
-            Dim size As Integer = Marshal.SizeOf(GetType(AcquisitionInfo))
-            Dim buffer As IntPtr = Marshal.AllocHGlobal(size)
-            Marshal.Copy(bytesIn, 0, buffer, size)
-            Dim pResult As AcquisitionInfo = CType(Marshal.PtrToStructure(buffer, GetType(AcquisitionInfo)), AcquisitionInfo)
-            Dim szKey = Encoding.Unicode.GetString(bytesIn, 16, pResult.cbSizeName - 2).Trim
-            Dim offsetKey = ((pResult.cbSizeName + 7) And Not 7) - pResult.cbSizeName
-            Dim szValue = Encoding.Unicode.GetString(bytesIn, 16 + pResult.cbSizeName + offsetKey, pResult.cbSizeValue - 2).Trim '30H
-            Debug.Print("Key=" + szKey + " Value=" + szValue)
-            If szKey.StartsWith("0:") Then
-                ClaimsDic.Add(szKey.Replace("0:", "").Trim, szValue)
-            ElseIf szKey.StartsWith("1:") Then
-                UseKeyDic.Add(szKey.Replace("1:", ""), szValue)
-            ElseIf szKey.Contains("SppLAPServerURL") Then
-                url = szValue
-            End If
-            Dim offsetValue = ((pResult.cbSizeValue + 7) And Not 7) - pResult.cbSizeValue
-            bytesIn = bytesIn.Skip(&H10 + pResult.cbSizeName + offsetKey + pResult.cbSizeValue + offsetValue).ToArray
-        Loop
-        Return BuildEnvelope("PKC", UseKeyDic, ClaimsDic)
-    End Function
-    Public Shared Function GetAlgorithmEUL(ByVal bytesIn() As Byte, ByRef url As String) As String 'eul:UseLicense
-        Dim UseKeyDic As New Dictionary(Of String, String)
-        Dim ClaimsDic As New Dictionary(Of String, String)
-        Dim offset_start = 0
-        Do While bytesIn.Length > 0
-            Dim size As Integer = Marshal.SizeOf(GetType(AcquisitionInfo))
-            Dim buffer As IntPtr = Marshal.AllocHGlobal(size)
-            Marshal.Copy(bytesIn, offset_start, buffer, size)
-            Dim pResult As AcquisitionInfo = CType(Marshal.PtrToStructure(buffer, GetType(AcquisitionInfo)), AcquisitionInfo)
-            Dim szKey = Encoding.Unicode.GetString(bytesIn, 16, pResult.cbSizeName - 2).Trim
-            Dim offsetKey = ((pResult.cbSizeName + 7) And Not 7) - pResult.cbSizeName
-            Dim szValue = Encoding.Unicode.GetString(bytesIn, 16 + pResult.cbSizeName + offsetKey, pResult.cbSizeValue - 2).Trim '30H
-            Debug.Print("Key=" + szKey + " Value=" + szValue)
-            If szKey.StartsWith("0:") Then
-                ClaimsDic.Add(szKey.Replace("0:", "").Trim, szValue)
-            ElseIf szKey.StartsWith("1:") Then
-                UseKeyDic.Add(szKey.Replace("1:", ""), szValue)
-            ElseIf szKey.Contains("SppLAPServerURL") Then
-                url = szValue
-            End If
-            Dim offsetValue = ((pResult.cbSizeValue + 7) And Not 7) - pResult.cbSizeValue
-            bytesIn = bytesIn.Skip(&H10 + pResult.cbSizeName + offsetKey + pResult.cbSizeValue + offsetValue).ToArray
-        Loop
-        Return BuildEnvelope("UseLicense", UseKeyDic, ClaimsDic)
+        Return BuildEnvelope(TokenType, UseKeyDic, ClaimsDic)
     End Function
 
 End Class
