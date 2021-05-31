@@ -19,7 +19,6 @@
 
 #5.Support check retail key HRESULT code.
 
-#6.If you query Windows7 or Windows8.1 under Windws10, the version error will be displayed. The opposite is also true.
 
 
 
