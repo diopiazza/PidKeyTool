@@ -15,7 +15,7 @@
 
 #3.Automatically store the detection results to a local database。
 
-#4.Support MAK key retain times.
+#4.Support MAK key remaining times.
 
 #5.Support check retail key HRESULT code.
 
