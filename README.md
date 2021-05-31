@@ -7,7 +7,7 @@
 
 ![image](https://github.com/laomms/PidKeyBatch/blob/master/checks.gif)
 
-## Tool for check Microsoft Product Key for All Windows Version and All Office Version
+## Tool for check Microsoft Product Key for Windows and Office
 
 #1.No windows certificate environment support is required.
 
@@ -15,7 +15,7 @@
 
 #3.Automatically store the detection results to a local database。
 
-#4.Support MAK key remaining times.
+#4.Support check MAK key remaining times.
 
 #5.Support check retail key HRESULT code.
 
