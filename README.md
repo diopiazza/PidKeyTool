@@ -1,12 +1,13 @@
 # PidKeyBatch   CN/EN Version
-密钥检测工具,检测结果存储于软件目录的KeyList.db数据库中,附数据库浏览工具:https://sqlitebrowser.org/dl/ .或者直接在检测工具菜单的数据库中编辑查看.    
 
-可用于检测零售密钥的有效状态和批量密钥的剩余次数.无需系统证书环境支持.
+## 微软密钥检测工具
+
+可用于检测零售密钥的有效状态和批量密钥的剩余次数.无需系统证书环境支持.检测结果存储于软件目录的KeyList.db数据库中.  
 
 
 ![image](https://github.com/laomms/PidKeyBatch/blob/master/checks.gif)
 
-# Tool for check Microsoft Product Key for All Windows Version and All Office Version
+## Tool for check Microsoft Product Key for All Windows Version and All Office Version
 
 #1.This software comes with a certificate, so no certificate file support is required.
 
