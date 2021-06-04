@@ -7,7 +7,7 @@
 
 ![image](https://github.com/laomms/PidKeyBatch/blob/master/checks.gif)
 
-## Tool for check Microsoft Product Key for Windows and Office
+## Tool for check Microsoft Product Key of Windows/Office
 
 #1.No windows certificate environment support is required.
 
