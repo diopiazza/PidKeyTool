@@ -25,7 +25,7 @@ where can find product key：
 [windows7](https://philka.ru/forum/topic/46608-kliuchi-aktivatcii-windows-7-vsekh-redaktcii/page-134)  
 [windows8](https://philka.ru/forum/topic/46609-kliuchi-aktivatcii-windows-8-81-vsekh-redaktcii/page-89)  
 [office](https://philka.ru/forum/topic/47480-kliuchi-aktivatcii-microsoft-office-all-version/page-115?hl=office)  
-[All](http://forum.rsload.net/)
+[All](http://forum.rsload.net/)  
 [other1](https://vn-z.vn/threads/tong-hop-key-windows-va-office.10945/)   
 [other2](https://www.aihao.cc/)   
 
