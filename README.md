@@ -11,7 +11,7 @@
 
 #1.No windows certificate environment support is required.
 
-#2.Support win6.0-win10, office2010 above.
+#2.Support win6.0-win10, office2010-office2021.
 
 #3.Automatically store the detection results to a local database。
 
