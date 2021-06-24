@@ -2,7 +2,7 @@
 
 ## 微软密钥检测工具
 
-可用于检测零售密钥的有效状态和批量密钥的剩余次数.无需系统证书环境支持.检测结果存储于软件目录的KeyList.db数据库中.  
+可用于检测零售密钥的有效状态和批量密钥的剩余次数.无需系统证书环境支持.直连微软服务器检测.检测结果存储于软件目录的KeyList.db数据库中.  
 
 
 ![image](https://github.com/laomms/PidKeyBatch/blob/master/checks.gif)
