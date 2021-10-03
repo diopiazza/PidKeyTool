@@ -1,4 +1,4 @@
-# PidKeyBatch   CN/EN Version
+# PKeyTool  CN/EN Version
 
 ## 微软密钥检测工具
 
