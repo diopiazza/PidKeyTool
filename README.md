@@ -1,7 +1,7 @@
 # PKeyTool  CN/EN Version
 
 ## 微软密钥检测工具
-
+目前唯一一款不依赖系统证书的零售密钥的检测工具.
 可用于检测零售密钥的有效状态和批量密钥的剩余次数.无需系统证书环境支持.直连微软服务器检测.检测结果存储于软件目录的KeyList.db数据库中.  
 因为通过本地解码算法后提取密钥加密数据直接连接微软服务器检测,两点一线(可以通过抓包验证),没经过任何第三方服服务器,所以完全避免了密钥泄露.
 
@@ -9,7 +9,8 @@
 ![image](https://github.com/laomms/PidKeyBatch/blob/master/checks.gif)
 
 ## Tool for check Microsoft Product Key of Windows/Office
-##### Post the encrypted data of product key and directly connected to the Microsoft server for detection, without any third-party server,completely avoid the possibility of key leakage.
+##### Post the encrypted data of product key and directly connected to the Microsoft server for detection, without any third-party server,completely avoid the possibility of key leakage.  
+##### Currently the only retail product key detection tool that does not rely the system certificate.  
 
 #1.No windows certificate environment support is required.
 
