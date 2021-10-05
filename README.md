@@ -8,6 +8,8 @@
 
 ![image](https://github.com/laomms/PidKeyBatch/blob/master/checks.gif)
 
+![image](https://github.com/laomms/PidKeyBatch/blob/master/record.gif)
+
 ## Tool for check Microsoft Product Key of Windows/Office
 ##### Post the encrypted data of product key and directly connected to the Microsoft server for detection, without any third-party server,completely avoid the possibility of key leakage.  
 ##### Currently the only retail product key detection tool that does not rely the system certificate.  
