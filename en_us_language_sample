@@ -1,0 +1,297 @@
+﻿  <data name="AboutToolStripMenuItem" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="ActStatus" xml:space="preserve">
+    <value>Activation Status</value>
+  </data>
+  <data name="btn_Batch" xml:space="preserve">
+    <value>Batch</value>
+  </data>
+  <data name="btn_PidCheck" xml:space="preserve">
+    <value>Checking</value>
+  </data>
+  <data name="CheckedTime" xml:space="preserve">
+    <value>CheckedTime:</value>
+  </data>
+  <data name="CheckFinish" xml:space="preserve">
+    <value>Checking completed</value>
+  </data>
+  <data name="Checking" xml:space="preserve">
+    <value>Checking No.</value>
+  </data>
+  <data name="CheckKms" xml:space="preserve">
+    <value>Checking if it contains KMS...</value>
+  </data>
+  <data name="CheckToolStripMenuItem" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="ClearFailed" xml:space="preserve">
+    <value>Clearing KMS failed. Error Code:</value>
+  </data>
+  <data name="ClearFinish" xml:space="preserve">
+    <value>Clear KMS successfully</value>
+  </data>
+  <data name="ClearKMSToolStripMenuItem" xml:space="preserve">
+    <value>Clear KMS</value>
+  </data>
+  <data name="CopyAllToolStripMenuItem" xml:space="preserve">
+    <value>Copy All Data</value>
+  </data>
+  <data name="CopyPageToolStripMenuItem" xml:space="preserve">
+    <value>Copy This Page</value>
+  </data>
+  <data name="CopyStripMenuItem" xml:space="preserve">
+    <value>Copy</value>
+  </data>
+  <data name="CopyToolStripMenuItem" xml:space="preserve">
+    <value>Copy</value>
+  </data>
+  <data name="Days" xml:space="preserve">
+    <value>Days</value>
+  </data>
+  <data name="DaysRemain" xml:space="preserve">
+    <value>DaysRemain=</value>
+  </data>
+  <data name="Deadline" xml:space="preserve">
+    <value>Deadline</value>
+  </data>
+  <data name="DeleteAllToolStripMenuItem" xml:space="preserve">
+    <value>Delete All Data</value>
+  </data>
+  <data name="DeleteToolStripMenuItem" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description:</value>
+  </data>
+  <data name="DigitalAct" xml:space="preserve">
+    <value>Digital Activation</value>
+  </data>
+  <data name="ErrorCode" xml:space="preserve">
+    <value>ErrorCode</value>
+  </data>
+  <data name="Expired" xml:space="preserve">
+    <value>(Expired)</value>
+  </data>
+  <data name="Expireds" xml:space="preserve">
+    <value>Expired</value>
+  </data>
+  <data name="ExtendedGrace" xml:space="preserve">
+    <value>ExtendedGrace</value>
+  </data>
+  <data name="FoundKMS" xml:space="preserve">
+    <value>Found KMS, ready to clear...</value>
+  </data>
+  <data name="Hours" xml:space="preserve">
+    <value>Hours</value>
+  </data>
+  <data name="ID" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="Input" xml:space="preserve">
+    <value>Please enter the keyword of the Key or KeyType to be searched</value>
+  </data>
+  <data name="KeyListTitle" xml:space="preserve">
+    <value>Keys Management</value>
+  </data>
+  <data name="KeysNo" xml:space="preserve">
+    <value>Keys:</value>
+  </data>
+  <data name="KeyStoreToolStripMenuItem" xml:space="preserve">
+    <value>Keys Management</value>
+  </data>
+  <data name="LabelSum" xml:space="preserve">
+    <value>Total Keys:</value>
+  </data>
+  <data name="LabelUnKnown" xml:space="preserve">
+    <value>Unknown Keys:</value>
+  </data>
+  <data name="LabelUnValid" xml:space="preserve">
+    <value>InValid Keys:</value>
+  </data>
+  <data name="LabelValid" xml:space="preserve">
+    <value>Valid Keys:</value>
+  </data>
+  <data name="LangToolStripMenuItem" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="lblStatus" xml:space="preserve">
+    <value>Enter the key and click the Checking button</value>
+  </data>
+  <data name="lbl_Status" xml:space="preserve">
+    <value>Ready</value>
+  </data>
+  <data name="LicenseChannel" xml:space="preserve">
+    <value>License Channel</value>
+  </data>
+  <data name="Licensed" xml:space="preserve">
+    <value>Licensed</value>
+  </data>
+  <data name="LicenseFormTitle" xml:space="preserve">
+    <value>Licenses Management</value>
+  </data>
+  <data name="LicenseKMS" xml:space="preserve">
+    <value>KMS38</value>
+  </data>
+  <data name="LicenseName" xml:space="preserve">
+    <value>License Name</value>
+  </data>
+  <data name="LicenseToolStripMenuItem" xml:space="preserve">
+    <value>License Management</value>
+  </data>
+  <data name="LoadFinish" xml:space="preserve">
+    <value>The licenses is loaded</value>
+  </data>
+  <data name="LoadingLicenses" xml:space="preserve">
+    <value>Loading licenses...</value>
+  </data>
+  <data name="MenuLabel" xml:space="preserve">
+    <value>≡</value>
+  </data>
+  <data name="Minutes" xml:space="preserve">
+    <value>Minutes</value>
+  </data>
+  <data name="ModifyToolStripMenuItem" xml:space="preserve">
+    <value>Modify</value>
+  </data>
+  <data name="None" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="NonGenuineGrace" xml:space="preserve">
+    <value>NonGenuineGrace</value>
+  </data>
+  <data name="NotFoundKey" xml:space="preserve">
+    <value>Not fount this key</value>
+  </data>
+  <data name="NotFoundKMS" xml:space="preserve">
+    <value>KMS was not found</value>
+  </data>
+  <data name="OnlineKey" xml:space="preserve">
+    <value>Online Key</value>
+  </data>
+  <data name="OOBGrace" xml:space="preserve">
+    <value>OOBGrace</value>
+  </data>
+  <data name="OOTGrace" xml:space="preserve">
+    <value>OOTGrace</value>
+  </data>
+  <data name="OpenToolStripMenuItem" xml:space="preserve">
+    <value>Open</value>
+  </data>
+  <data name="outputTextBox" xml:space="preserve">
+    <value>Supports the detection HRESULT codes of retail key and the remaining times of MAK keys. No system certificate environment support is required. Supports detection of Win6.0-Win10 keys and Office2010 series and above.</value>
+  </data>
+  <data name="Pages" xml:space="preserve">
+    <value> Pages</value>
+  </data>
+  <data name="PartialKey" xml:space="preserve">
+    <value>Partial Key</value>
+  </data>
+  <data name="PasteStripMenuItem" xml:space="preserve">
+    <value>Paste</value>
+  </data>
+  <data name="PasteToolStripMenuItem" xml:space="preserve">
+    <value>Paste</value>
+  </data>
+  <data name="Permanent" xml:space="preserve">
+    <value>Permanent</value>
+  </data>
+  <data name="PreviewKey" xml:space="preserve">
+    <value>Preview Key</value>
+  </data>
+  <data name="ProductKey" xml:space="preserve">
+    <value>ProductKey:</value>
+  </data>
+  <data name="ReCheckToolStripMenuItem" xml:space="preserve">
+    <value>ReCheck</value>
+  </data>
+  <data name="Records" xml:space="preserve">
+    <value> Records</value>
+  </data>
+  <data name="RefreshLicenseToolStripMenuItem" xml:space="preserve">
+    <value>Refresh License</value>
+  </data>
+  <data name="RefreshToolStripMenuItem" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
+  <data name="Remain" xml:space="preserve">
+    <value>Remain:</value>
+  </data>
+  <data name="RemainingRearmCount" xml:space="preserve">
+    <value>RemainingRearmCount</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="SearchToolStripMenuItem" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="StopsToolStripMenuItem" xml:space="preserve">
+    <value>Stop</value>
+  </data>
+  <data name="SubType" xml:space="preserve">
+    <value>Sub Type:</value>
+  </data>
+  <data name="TabPages1" xml:space="preserve">
+    <value>Valid Keys</value>
+  </data>
+  <data name="TabPages2" xml:space="preserve">
+    <value>Unknown Keys</value>
+  </data>
+  <data name="TabPages3" xml:space="preserve">
+    <value>Invalid Keys</value>
+  </data>
+  <data name="TimeRemain" xml:space="preserve">
+    <value>Remain</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>Total </value>
+  </data>
+  <data name="Totals" xml:space="preserve">
+    <value>Total </value>
+  </data>
+  <data name="txtKeyHint" xml:space="preserve">
+    <value>Please enter the key</value>
+  </data>
+  <data name="txt_Key" xml:space="preserve">
+    <value>Right-click to open a text file or double-click paste clipboard</value>
+  </data>
+  <data name="txt_ResInvalid" xml:space="preserve">
+    <value>InValid Keys</value>
+  </data>
+  <data name="txt_ResValid" xml:space="preserve">
+    <value>Valid Keys</value>
+  </data>
+  <data name="txt_Unknown" xml:space="preserve">
+    <value>Unknown Keys</value>
+  </data>
+  <data name="Uninstall" xml:space="preserve">
+    <value>Uninstalling product key...</value>
+  </data>
+  <data name="UninstallError" xml:space="preserve">
+    <value>Installation failed, Error Code</value>
+  </data>
+  <data name="UninstallSuccessful" xml:space="preserve">
+    <value>The key was successfully uninstalled</value>
+  </data>
+  <data name="UninstallToolStripMenuItem" xml:space="preserve">
+    <value>Uninstall</value>
+  </data>
+  <data name="Unknown" xml:space="preserve">
+    <value>Unknown</value>
+  </data>
+  <data name="UnknownLicense" xml:space="preserve">
+    <value>Unknown License</value>
+  </data>
+  <data name="Unlicensed" xml:space="preserve">
+    <value>Unlicensed</value>
+  </data>
+  <data name="Validity" xml:space="preserve">
+    <value>(Validity)</value>
+  </data>
+  <data name="Validitys" xml:space="preserve">
+    <value>Validity</value>
+  </data>
+  <data name="Win5ToolStripMenuItem" xml:space="preserve">
+    <value>Support Win5</value>
+  </data>
