@@ -26,7 +26,7 @@
   
   
 ##### About translation:
-If someone want to add your own language,fork this repository,translate en_us_language_sample.resx to your own language and save a new file,then make a pull equest.
+If someone want to add your own language,fork this repository,translate en_us_language_sample.resx to your own language and save a new file,then make a pull request.
 
 
 where can find product key：
