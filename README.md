@@ -23,9 +23,8 @@
 #4.Support check MAK key remaining times.
 
 #5.Support check retail key HRESULT code.
-  
-[![](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=)
-
+ 
+ 
 ##### About translation:
 If someone want to add your own language,fork this repository,translate en_us_language_sample.resx to your own language and save a new file,then make a pull request.
 
