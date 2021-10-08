@@ -23,6 +23,11 @@
 #4.Support check MAK key remaining times.
 
 #5.Support check retail key HRESULT code.
+  
+  
+##### About translation:
+If someone want to add your own language,fork this repository,translate en_us_language_sample.resx to your own language and save a new file,then make a pull equest.
+
 
 where can find product key：
 
