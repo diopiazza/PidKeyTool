@@ -28,6 +28,8 @@
 ##### About translation:
 If someone want to add your own language,fork this repository,translate en_us_language_sample.resx to your own language and save a new file,then make a pull request.
 
+Or you can send translation text file to my mailbox:laomms@gmail.com,thanks very much!  
+
 
 where can find product key：
 
