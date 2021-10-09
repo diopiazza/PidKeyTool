@@ -31,7 +31,6 @@
 ##### Or you can send translation text file to my mailbox:laomms@gmail.com,thanks very much!
 ##### Currently via Google Translate. 
 
-
 Where can find product key：
 
 [windows10](https://philka.ru/forum/topic/46610-kliuchi-aktivatcii-windows-10-vse-redaktcii/page-309)  
