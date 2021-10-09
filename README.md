@@ -31,6 +31,8 @@ If someone want to add your own language,fork this repository,translate en_us_la
 
 Or you can send translation text file to my mailbox:laomms@gmail.com,thanks very much!  
 
+Currently via Google Translate
+
 
 where can find product key：
 
