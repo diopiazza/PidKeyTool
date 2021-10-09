@@ -27,14 +27,14 @@
  [![](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.sandbox.paypal.com/donate?hosted_button_id=WTE9HCGSXGTAN)
  
 ##### About translation:
-If someone want to add your own language,fork this repository,translate en_us_language_sample.resx to your own language and save a new file,then make a pull request.
+####### If someone want to add your own language,fork this repository,translate en_us_language_sample.resx to your own language and save a new file,then make a pull request.
 
-Or you can send translation text file to my mailbox:laomms@gmail.com,thanks very much!  
+####### Or you can send translation text file to my mailbox:laomms@gmail.com,thanks very much!  
 
-Currently via Google Translate
+####### Currently via Google Translate. 
 
 
-where can find product key：
+Where can find product key：
 
 [windows10](https://philka.ru/forum/topic/46610-kliuchi-aktivatcii-windows-10-vse-redaktcii/page-309)  
 [windows7](https://philka.ru/forum/topic/46608-kliuchi-aktivatcii-windows-7-vsekh-redaktcii/page-134)  
