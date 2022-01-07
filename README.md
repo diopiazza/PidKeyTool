@@ -1,4 +1,4 @@
-# PKeyTool  CN/EN Version
+# PidKeyTool  CN/EN Version
 
 ## 微软密钥检测工具
 ###### 目前唯一一款不依赖系统证书的零售密钥的检测工具.  
