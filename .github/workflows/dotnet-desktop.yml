@@ -52,10 +52,10 @@ jobs:
         Configuration: ${{ matrix.configuration }}
 
     # 执行单元测试
-    - name: Execute unit tests
-      run: dotnet test -c $env:Configuration
-      env:
-        Configuration: ${{ matrix.configuration }}
+    #- name: Execute unit tests
+    #  run: dotnet test -c $env:Configuration
+    #  env:
+    #    Configuration: ${{ matrix.configuration }}
      
     # 上传并发布
     - name: Upload to release
