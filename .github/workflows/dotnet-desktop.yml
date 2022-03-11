@@ -64,7 +64,7 @@ jobs:
         name: PidKeyTest
         path: PidKeyTest\bin\Release
 
-    # 发布Release版本
+    # 创建Release版本
     - name: GitHub Release
       id: create_release
       uses: actions/create-release@latest
