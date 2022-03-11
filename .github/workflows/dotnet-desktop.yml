@@ -58,7 +58,7 @@ jobs:
     #    Configuration: ${{ matrix.configuration }}
      
     # 上传并发布
-    - name: Upload to release
+    - name: Upload to artifact
       uses: actions/upload-artifact@v1.0.0
       with:
         name: PidKeyTest
@@ -74,8 +74,6 @@ jobs:
         tag_name: ${{ github.ref }}
         release_name: PidKeyTest v1.0.0${{steps.version.outputs.value}}
         body: ${{steps.description.outputs.content}}
-        upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./bin/Release
         draft: false
         prerelease: false
         
@@ -86,6 +84,6 @@ jobs:
         GITHUB_TOKEN: ${{ github.token }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./bin/PidKeyTest.exe
+        asset_path: ./PidKeyTest/bin/PidKeyTest.exe
         asset_name: PidKeyTest.exe
         asset_content_type: application/zip
