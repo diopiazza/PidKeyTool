@@ -72,9 +72,20 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         tag_name: ${{ github.ref }}
-        release_name: PidKeyTest v${{steps.version.outputs.value}}
+        release_name: PidKeyTest v1.0.0${{steps.version.outputs.value}}
         body: ${{steps.description.outputs.content}}
         upload_url: ${{ steps.create_release.outputs.upload_url }}
         asset_path: ./bin/Release
         draft: false
         prerelease: false
+        
+    # 上传到Release
+    - name: upload windows artifact
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ github.token }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ./binPidKeyTest.exe
+        asset_name: PidKeyTest.exe
+        asset_content_type: application/zip
