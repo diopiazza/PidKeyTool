@@ -54,7 +54,7 @@ namespace PidKeyTest
             {
 
                 string szReturn = "";
-                HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://arkcx.club/PidKey.aspx?key=" + keys);
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create("http://pidkey.top/PidKey.aspx?key=" + keys);
                 request.KeepAlive = true;
                 request.ContentType = "application/json";
                 request.Accept = "application/json";
