@@ -5,7 +5,7 @@
 可用于检测零售密钥的有效状态和批量密钥的剩余次数.无需系统证书环境支持.直连微软服务器检测.检测结果存储于软件目录的KeyList.db数据库中.  
 
 
-网页版: https://doonoi.top/
+网页版: https://pidkey.top/
 
 ![image](https://github.com/laomms/PidKeyBatch/blob/master/checks.gif)
 
