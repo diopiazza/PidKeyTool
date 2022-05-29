@@ -1,11 +1,29 @@
 # PidKeyTool  CN/EN Version
 网页版: https://pidkey.top
-
 ## 微软密钥检测工具
 
+## 内容导引
+| 章节 | 描述 |
+|-|-|
+| [简介](#简介) | 软件简介 |
+| [更新记录](#更新记录) | 版本更新记录 |
+| [问题](#问题) | 一些常见问题 |
+| [软件截图](#软件截图) | 运行界面 |
+| [抓包截图](#抓包截图) | 抓包查看是否有第三方链接 |
+| [英文简介](#英文简介) | 英文版软件简介 |
+| [密钥相关网站](#密钥相关网站) | 一些密钥网站推荐 |
+
+
+## 简介
+Windows/Office密钥检测工具  
 可用于检测零售密钥的有效状态和批量密钥的剩余次数.  
 无需系统证书环境支持.直连微软服务器检测.  
 检测结果存储于软件目录的KeyList.db数据库中.   
+
+## 更新记录
+v2.5 加入webact检测
+v2.0 加入绑定密钥检测
+v1.5 加入随机硬件模拟
 
 ## 问题 Question
     1. 问：用该工具会不会泄露密钥? 
@@ -21,11 +39,13 @@
     6. 问：密钥复活了怎么检测?  
        答：在密钥管理菜单右键，有重新检测菜单，可以选中所有需要重新检测的密钥列表进行重新检测。如果主程序界面是批量检测界面，将会检测所有选中的密钥。如果是单独检测界面，只有检测一个密钥。
 
-
+## 软件截图
 ![image](https://github.com/laomms/PidKeyBatch/blob/master/checks.gif)
 
+## 抓包截图
 ![image](https://github.com/laomms/PidKeyBatch/blob/master/record.gif)
 
+## 英文简介
 # Tool for check Microsoft Product Key of Windows/Office
 #### 1.No windows certificate environment support is required.
 #### 2.Support win6.0-win11, office2010-office2021.
@@ -38,11 +58,7 @@
  [![](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.sandbox.paypal.com/donate?hosted_button_id=WTE9HCGSXGTAN)
  -->
  
-
-
-
-## Where can find product key：
-
+## 密钥相关网站
 [windows10](https://philka.ru/forum/topic/46610-kliuchi-aktivatcii-windows-10-vse-redaktcii/page-309)  
 [windows7](https://philka.ru/forum/topic/46608-kliuchi-aktivatcii-windows-7-vsekh-redaktcii/page-134)  
 [windows8](https://philka.ru/forum/topic/46609-kliuchi-aktivatcii-windows-8-81-vsekh-redaktcii/page-89)  
