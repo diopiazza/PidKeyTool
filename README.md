@@ -57,29 +57,30 @@ v1.5 加入随机硬件模拟
  
 ## 错误代码
     * 错误代码：0XC004C003
-错误代号：SL_E_CHPA_PRODUCT_KEY_BLOCKED
-描述：激活服务器确定指定的产品密钥已被阻止。
-翻译：The activation server determined the specified product key has been blocked.
+    错误代号：SL_E_CHPA_PRODUCT_KEY_BLOCKED
+    描述：激活服务器确定指定的产品密钥已被阻止。
+    翻译：The activation server determined the specified product key has been blocked.
     * 错误代码：0XC004C060
-错误代号：SL_E_CHPA_DYNAMICALLY_BLOCKED_PRODUCT_KEY
-描述：激活服务器确定指定的产品密钥已被阻止。
-翻译：The activation server determined the specified product key has been blocked.
+    错误代号：SL_E_CHPA_DYNAMICALLY_BLOCKED_PRODUCT_KEY
+    描述：激活服务器确定指定的产品密钥已被阻止。
+    翻译：The activation server determined the specified product key has been blocked.
     * 错误代码：0XC004C020
-错误代号：SL_E_CHPA_DMAK_LIMIT_EXCEEDED
-描述：激活服务器报告该密钥已超出其在线激活次数限制。
-翻译：The activation server reported that the Multiple Activation Key has exceeded its limit.
+    错误代号：SL_E_CHPA_DMAK_LIMIT_EXCEEDED
+    描述：激活服务器报告该密钥已超出其在线激活次数限制。
+    翻译：The activation server reported that the Multiple Activation Key has exceeded its limit.
     * 错误代码：0XC004C008
-错误代号：SL_E_CHPA_MAXIMUM_UNLOCK_EXCEEDED
-描述：激活服务器报告产品密钥已超出其在线激活次数限制。
-翻译：The activation server reported that the product key has exceeded its unlock limit.
+    错误代号：SL_E_CHPA_MAXIMUM_UNLOCK_EXCEEDED
+    描述：激活服务器报告产品密钥已超出其在线激活次数限制。
+    翻译：The activation server reported that the product key has exceeded its unlock limit.
     * 错误代码：0XC004C004
-错误代号：SL_E_CHPA_INVALID_PRODUCT_KEY
-描述：激活服务器确定指定的产品密钥无效。
-翻译：The activation server determined the specified product key is invalid.
+    错误代号：SL_E_CHPA_INVALID_PRODUCT_KEY
+    描述：激活服务器确定指定的产品密钥无效。
+    翻译：The activation server determined the specified product key is invalid.
     * 错误代码：0XC004C00D
-错误代号：SL_E_CHPA_INVALID_ACTCONFIG_ID
-描述：激活服务器确定产品密钥无效。
-翻译：The activation server determined the product key is not valid.
+    错误代号：SL_E_CHPA_INVALID_ACTCONFIG_ID
+    描述：激活服务器确定产品密钥无效。
+    翻译：The activation server determined the product key is not valid.
+    
 
  <!---
  [![](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.sandbox.paypal.com/donate?hosted_button_id=WTE9HCGSXGTAN)
