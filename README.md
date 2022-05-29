@@ -35,17 +35,17 @@
 
 ## Tool for check Microsoft Product Key of Windows/Office
 
-#1.No windows certificate environment support is required.
+#### 1.No windows certificate environment support is required.
 
-#2.Support win6.0-win11, office2010-office2021.
+#### 2.Support win6.0-win11, office2010-office2021.
 
-#3.Automatically store the detection results to a local database.
+#### 3.Automatically store the detection results to a local database.
 
-#4.Support check MAK key remaining times.
+#### 4.Support check MAK key remaining times.
 
-#5.Support check retail key HRESULT code.
+#### 5.Support check retail key HRESULT code.
 
-#6.Support to detect whether the 020 key can obtain the confirmation ID online.
+#### 6.Support to detect whether the 020 key can obtain the confirmation ID online.
  
  <!---
  [![](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.sandbox.paypal.com/donate?hosted_button_id=WTE9HCGSXGTAN)
