@@ -80,7 +80,19 @@ v1.5 加入随机硬件模拟
     错误代号：SL_E_CHPA_INVALID_ACTCONFIG_ID
     描述：激活服务器确定产品密钥无效。
     翻译：The activation server determined the product key is not valid.
-    
+    * 错误代码：0XC004F069
+    错误代号：SL_E_MISMATCHED_PRODUCT_SKU
+    描述：软件授权服务报告找不到产品sku，系统未发现该密钥证书。
+    翻译：The Software Licensing Service reported that the product SKU is not found.
+     * 错误代码：0XC004E016
+     错误代号：SL_E_PKEY_INVALID_CONFIG
+     描述：软件授权服务报告产品密钥与系统SKU不一致。
+     翻译：The Software Licensing Service reported that the product key is invalid.
+     * 错误代码：0XC004F050
+     错误代号：SL_E_INVALID_PRODUCT_KEY
+     描述：软件授权服务报告产品密钥与版本不符。
+     翻译：The Software Licensing Service reported that the product key is invalid.
+     
 
  <!---
  [![](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.sandbox.paypal.com/donate?hosted_button_id=WTE9HCGSXGTAN)
