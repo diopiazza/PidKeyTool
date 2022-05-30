@@ -36,7 +36,7 @@ v1.5 加入随机硬件模拟.
     4. 问：能不能检测Office绑定密钥还是否有效?
        答：可以。绑定密钥需要登陆自己的微软账户检测，该账户信息会记录在注册表中(HKEY_CURRENT_USER\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers下的OutlookUsername和OutlookPassword)，以便下次不用再次登陆。纯本地操作，完全不用担心泄露账号。  
     5. 问：每次更新软件后原来的检测结果会不会丢失?  
-       答：密钥的检测结构存储于目录的KeyList.db，该数据库没有加密，你可以用DB Browser for SQLite（https://sqlitebrowser.org/ )直接打开浏览，同一目录下该数据库不会被覆盖，你也可以移动旧的数据库到升级后软件的目录。
+       答：密钥的检测结果存储于目录的KeyList.db，该数据库没有加密，你可以用DB Browser for SQLite（https://sqlitebrowser.org/ )直接打开浏览，同一目录下该数据库不会被覆盖，你也可以移动旧的数据库到升级后软件的目录。
     6. 问：密钥复活了怎么检测?  
        答：在密钥管理菜单右键，有重新检测菜单，可以选中所有需要重新检测的密钥列表进行重新检测。如果主程序界面是批量检测界面，将会检测所有选中的密钥。如果是单独检测界面，只有检测一个密钥。
     7. 问：有相关控件可以供我的程序调用吗?  
