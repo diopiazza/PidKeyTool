@@ -50,7 +50,7 @@ v1.5 加入随机硬件模拟.
 
 ## 英文简介
 # Tool for check Microsoft Product Key of Windows/Office
-```php
+```
 1.No windows certificate environment support is required.
 2.Support win6.0-win11, office2010-office2021.
 3.Automatically store the detection results to a local database.
