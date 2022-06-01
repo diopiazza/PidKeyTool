@@ -50,12 +50,14 @@ v1.5 加入随机硬件模拟.
 
 ## 英文简介
 # Tool for check Microsoft Product Key of Windows/Office
-#### 1.No windows certificate environment support is required.
-#### 2.Support win6.0-win11, office2010-office2021.
-#### 3.Automatically store the detection results to a local database.
-#### 4.Support check MAK key remaining times.
-#### 5.Support check retail key HRESULT code.
-#### 6.Support to detect whether the 020 key can obtain the confirmation ID online.
+```php
+1.No windows certificate environment support is required.
+2.Support win6.0-win11, office2010-office2021.
+3.Automatically store the detection results to a local database.
+4.Support check MAK key remaining times.
+5.Support check retail key HRESULT code.
+6.Support to detect whether the 020 key can obtain the confirmation ID online.
+```
  
 ## 错误代码
     * 错误代码：0XC004C003
