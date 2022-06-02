@@ -1,119 +1,90 @@
-# PidKeyTool  CN/EN Version
-网页版: https://pidkey.top
-## 微软密钥检测工具
 
-## 内容导引
-| 章节 | 描述 |
+
+# PidKeyTool CN/EN Version
+Web version: https://pidkey.top
+## Microsoft Key Detection Tool
+
+## Content guide
+| Chapter | Description |
 |-|-|
-| [简介](#简介) | 软件简介 |
-| [更新记录](#更新记录) | 版本更新记录 |
-| [问题](#问题) | 一些常见问题解答 |
-| [软件截图](#软件截图) | 运行界面 |
-| [抓包截图](#抓包截图) | 抓包查看是否有第三方链接 |
-| [英文简介](#英文简介) | 英文版软件简介 |
-| [错误代码](#错误代码) | 常见错误代码解释 |
-| [密钥相关网站](#密钥相关网站) | 一些密钥网站推荐 |
+| [Introduction](#Introduction) | Software Introduction |
+| [UpdateRecord](#UpdateRecord) | Version update record |
+| [question](#question) | Some FAQs |
+| [ScreenShot](#ScreenShot) | Running interface |
+| [ScreenCapture](#ScreenCapture) | Capture package to see if there is a third-party link |
+| [English introduction](#English introduction) | English version software introduction |
+| [Error code](#Error code) | Explanation of common error codes |
+| [Key related website](#Key related website) | Some key websites are recommended |
 
 
-## 简介
-Windows/Office密钥检测工具  
-可用于检测零售密钥的有效状态和批量密钥的剩余次数.  
-无需系统证书环境支持.直连微软服务器检测.  
-检测结果存储于软件目录的KeyList.db数据库中.   
+## Introduction
+Windows/Office Key Detection Tool
+Can be used to detect the validity state of retail keys and the remaining number of times for MAK keys.
+No need for system certificate environment support. Direct connection to Microsoft server detection.
+The detection results are stored in the KeyList.db database in the software catalog.
 
-## 更新记录
-v2.5 加入webact检测.   
-v2.0 加入绑定密钥检测.   
-v1.5 加入随机硬件模拟.   
+## UpdateRecord
+v2.5 Added webact detection.
+v2.0 added binding key detection.
+v1.5 Added random hardware emulation.
 
-## 问题
-    1. 问：用该工具会不会泄露密钥? 
-       答：该检测工具的原理是:解码密钥后，通过模拟硬件数据结合密钥数据生成用户证书，发包给微软服务器获取返回结果，所以至始至终只连接微软服务器，如果不放心可以用相关工具抓包分析是否有第三方链接地址。 
-    2. 问：会不会对本机造成影响?
-       答：传统的密钥检测工具通过安装密钥到系统获取系统返回的错误代码，该工具直接绕过了这一步，所以跟系统证书没有任何关系。
-    3. 问：我想知道检测结果为020的密钥是否还能通过微软的电话自助网页(Microsoft Self Service for Mobile site)在线获取确认ID？
-       答：菜单中有设置是否要获取该项结果的设置，如果你不知道webact的Token值，软件已经内置了，可以不用设置。注意该项设置会影响检测速度。
-    4. 问：能不能检测Office绑定密钥还是否有效?
-       答：可以。绑定密钥需要登陆自己的微软账户检测，该账户信息会记录在注册表中(HKEY_CURRENT_USER\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers下的OutlookUsername和OutlookPassword)，以便下次不用再次登陆。纯本地操作，完全不用担心泄露账号。  
-    5. 问：每次更新软件后原来的检测结果会不会丢失?  
-       答：密钥的检测结果存储于目录的KeyList.db，该数据库没有加密，你可以用DB Browser for SQLite（https://sqlitebrowser.org/ )直接打开浏览，同一目录下该数据库不会被覆盖，你也可以移动旧的数据库到升级后软件的目录。
-    6. 问：密钥复活了怎么检测?  
-       答：在密钥管理菜单右键，有重新检测菜单，可以选中所有需要重新检测的密钥列表进行重新检测。如果主程序界面是批量检测界面，将会检测所有选中的密钥。如果是单独检测界面，只有检测一个密钥。
-    7. 问：有相关控件可以供我的程序调用吗?  
-       答：目前还没有公开相关控件，但是提供一个检测服务器接口供调用，相关代码看DEMO. 
+## question
+    1. Q: Will this tool reveal the key?
+       A: This tool work process is: after decoding the key, it generates a user license by simulating hardware data combined with key data, and post to the Microsoft server to obtain the returned result, so it only connects to the Microsoft server. Or you can use captures tool to analyzes whether there is a third-party link address.
+    2. Q: Will it affect the machine?
+       A: The traditional key detection tool obtains the retail key result by installing the key to the system and get return error code. The tool directly bypasses this step, so it has nothing to do with the system certificate.
+    3. Q: I would like to know if a key with a test result of 020 can still obtain a confirmation ID online through Microsoft's Self Service for Mobile site?
+       A: Yes. There is a setting in menu to choose whether to get the result of webact. If you do not know the Token value of webact, the software is already built-in, so you do not need to set it. Note that this setting will affect the detection speed.
+    4. Q: Can check whether the Office binding key is still valid?
+       A: Yes. The binding key needs to log in to your own Microsoft account for detection, and the account information will be recorded in the registry (OutlookUsername and OutlookPassword under HKEY_CURRENT_USER\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers), so that you do not need to log in again next time. Pure local operation, no need to worry about leaking your account.
+    5. Q: Will the original test results be lost after each software update?
+       A: The detection result of the key is stored in KeyList.db in the directory. The database is not encrypted. You can use DB Browser for SQLite (https://sqlitebrowser.org/ ) to open and browse directly. The database in the same directory will not be overwritten. , you can also move the old database to the directory of the upgraded software.
+    6. Q: How to detect the resurrection of the key?
+       A: Right-click in the key management menu, there is a re-detection menu, you can select all the key lists that need to be re-detected for re-detection. If the main program interface is the batch detection interface, all selected keys will be detected. If it is a separate detection interface, only one key is detected.
+    7. Q: Are there any related controls that my program can call?
+       A: The relevant controls have not been disclosed yet, but a detection server interface is provided for calling, and the relevant code can be found in DEMO.
 
-## 软件截图
+## ScreenShot
 ![image](https://github.com/laomms/PidKeyBatch/blob/master/checks.gif)
 
-## 抓包截图
+## ScreenCapture
 ![image](https://github.com/laomms/PidKeyBatch/blob/master/record.gif)
 
-## 英文简介
-# Tool for check Microsoft Product Key of Windows/Office
-```
-1.No windows certificate environment support is required.
-2.Support win6.0-win11, office2010-office2021.
-3.Automatically store the detection results to a local database.
-4.Support check MAK key remaining times.
-5.Support check retail key HRESULT code.
-6.Support to detect whether the 020 key can obtain the confirmation ID online.
-```
- 
-## 错误代码
-    * 错误代码：0XC004C003
-    错误代号：SL_E_CHPA_PRODUCT_KEY_BLOCKED
-    描述：激活服务器确定指定的产品密钥已被阻止。
-    翻译：The activation server determined the specified product key has been blocked.
-    * 错误代码：0XC004C060
-    错误代号：SL_E_CHPA_DYNAMICALLY_BLOCKED_PRODUCT_KEY
-    描述：激活服务器确定指定的产品密钥已被阻止。
-    翻译：The activation server determined the specified product key has been blocked.
-    * 错误代码：0XC004C020
-    错误代号：SL_E_CHPA_DMAK_LIMIT_EXCEEDED
-    描述：激活服务器报告该密钥已超出其在线激活次数限制。
-    翻译：The activation server reported that the Multiple Activation Key has exceeded its limit.
-    * 错误代码：0XC004C008
-    错误代号：SL_E_CHPA_MAXIMUM_UNLOCK_EXCEEDED
-    描述：激活服务器报告产品密钥已超出其在线激活次数限制。
-    翻译：The activation server reported that the product key has exceeded its unlock limit.
-    * 错误代码：0XC004C004
-    错误代号：SL_E_CHPA_INVALID_PRODUCT_KEY
-    描述：激活服务器确定指定的产品密钥无效。
-    翻译：The activation server determined the specified product key is invalid.
-    * 错误代码：0XC004C00D
-    错误代号：SL_E_CHPA_INVALID_ACTCONFIG_ID
-    描述：激活服务器确定产品密钥无效。
-    翻译：The activation server determined the product key is not valid.
-    * 错误代码：0XC004F069
-    错误代号：SL_E_MISMATCHED_PRODUCT_SKU
-    描述：软件授权服务报告找不到产品sku，系统未发现该密钥证书。
-    翻译：The Software Licensing Service reported that the product SKU is not found.
-    * 错误代码：0XC004E016
-    错误代号：SL_E_PKEY_INVALID_CONFIG
-    描述：软件授权服务报告产品密钥与系统SKU不一致。
-    翻译：The Software Licensing Service reported that the product key is invalid.
-    * 错误代码：0XC004F050
-    错误代号：SL_E_INVALID_PRODUCT_KEY
-    描述：软件授权服务报告产品密钥与版本不符。
-    翻译：The Software Licensing Service reported that the product key is invalid.
+## error code
+    * Error code: 0XC004C003
+    Constant: SL_E_CHPA_PRODUCT_KEY_BLOCKED
+    Description: The activation server determined the specified product key has been blocked.
+    * Error code: 0XC004C060
+    Constant: SL_E_CHPA_DYNAMICALLY_BLOCKED_PRODUCT_KEY
+    Description: The activation server determined the specified product key has been blocked.
+    * Error code: 0XC004C020
+    Constant: SL_E_CHPA_DMAK_LIMIT_EXCEEDED
+    Description: The activation server reported that the Multiple Activation Key has exceeded its limit.
+    * Error code: 0XC004C008
+    Constant: SL_E_CHPA_MAXIMUM_UNLOCK_EXCEEDED
+    Description: The activation server reported that the product key has exceeded its unlock limit.
+    * Error code: 0XC004C004
+    Constant: SL_E_CHPA_INVALID_PRODUCT_KEY
+    Description: The activation server determined the specified product key is invalid.
+    * Error code: 0XC004C00D
+    Constant: SL_E_CHPA_INVALID_ACTCONFIG_ID
+    Description: The activation server determined the product key is not valid.
+    * Error code: 0XC004F069
+    Constant: SL_E_MISMATCHED_PRODUCT_SKU
+    Description: The Software Licensing Service reported that the product SKU is not found.
+    * Error code: 0XC004E016
+    Constant: SL_E_PKEY_INVALID_CONFIG
+    Description: The Software Licensing Service reported that the product key is invalid.
+    * Error code: 0XC004F050
+    Constant: SL_E_INVALID_PRODUCT_KEY
+    Description: The Software Licensing Service reported that the product key is invalid.
      
-
- <!---
- [![](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.sandbox.paypal.com/donate?hosted_button_id=WTE9HCGSXGTAN)
- -->
  
-## 密钥相关网站
-[windows10](https://philka.ru/forum/topic/46610-kliuchi-aktivatcii-windows-10-vse-redaktcii/page-309)  
-[windows7](https://philka.ru/forum/topic/46608-kliuchi-aktivatcii-windows-7-vsekh-redaktcii/page-134)  
-[windows8](https://philka.ru/forum/topic/46609-kliuchi-aktivatcii-windows-8-81-vsekh-redaktcii/page-89)  
-[office](https://philka.ru/forum/topic/47480-kliuchi-aktivatcii-microsoft-office-all-version/page-115?hl=office)  
-[All](http://forum.rsload.net/)  
-[other1](https://vn-z.vn/threads/tong-hop-key-windows-va-office.10945/)   
-[other2](https://www.aihao.cc/)   
-
-
-
-
-
-
-
+## Key related website
+[windows10](https://philka.ru/forum/topic/46610-kliuchi-aktivatcii-windows-10-vse-redaktcii/page-309)
+[windows7](https://philka.ru/forum/topic/46608-kliuchi-aktivatcii-windows-7-vsekh-redaktcii/page-134)
+[windows8](https://philka.ru/forum/topic/46609-kliuchi-aktivatcii-windows-8-81-vsekh-redaktcii/page-89)
+[office](https://philka.ru/forum/topic/47480-kliuchi-aktivatcii-microsoft-office-all-version/page-115?hl=office)
+[All](http://forum.rsload.net/)
+[other1](https://vn-z.vn/threads/tong-hop-key-windows-va-office.10945/)
+[other2](https://www.aihao.cc/)
