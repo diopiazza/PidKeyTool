@@ -40,7 +40,9 @@ v1.5 Added random hardware emulation.
        A: The detection result of the key is stored in KeyList.db in the directory. The database is not encrypted. You can use DB Browser for SQLite (https://sqlitebrowser.org/ ) to open and browse directly. The database in the same directory will not be overwritten. , you can also move the old database to the directory of the upgraded software.
     6. Q: How to detect the resurrection of the key?
        A: Right-click in the key management menu, there is a re-detection menu, you can select all the key lists that need to be re-detected for re-detection. If the main program interface is the batch detection interface, all selected keys will be detected. If it is a separate detection interface, only one key is detected.
-    7. Q: Is there any relevant library for calling in my program ?
+    7. Q: Will the detection consume the remaining times of the key??
+       A: For the retail online key, it will be consumed once, because it must be verified by the Microsoft server and return a user license. The 008 and 020 keys will not be consumed because there is no activation process.
+    8. Q: Is there any relevant library for calling in my program ?
        A: The relevant library have not been disclosed yet, but a detection server interface is provided for calling, and the relevant code can be found in DEMO.
 
 ## ScreenShot
