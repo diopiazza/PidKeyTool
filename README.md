@@ -23,9 +23,9 @@ No need for system certificate environment support. Direct connection to Microso
 The detection results are stored in the KeyList.db database in the software catalog.
 
 ## UpdateRecord
-v2.5 Added webact detection.
-v2.0 added binding key detection.
-v1.5 Added random hardware emulation.
+v2.5 Added webact detection.    
+v2.0 added binding key detection.    
+v1.5 Added random hardware emulation.    
 
 ## question
     1. Q: Will this tool reveal the key?
