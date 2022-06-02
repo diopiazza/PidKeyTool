@@ -40,8 +40,8 @@ v1.5 Added random hardware emulation.
        A: The detection result of the key is stored in KeyList.db in the directory. The database is not encrypted. You can use DB Browser for SQLite (https://sqlitebrowser.org/ ) to open and browse directly. The database in the same directory will not be overwritten. , you can also move the old database to the directory of the upgraded software.
     6. Q: How to detect the resurrection of the key?
        A: Right-click in the key management menu, there is a re-detection menu, you can select all the key lists that need to be re-detected for re-detection. If the main program interface is the batch detection interface, all selected keys will be detected. If it is a separate detection interface, only one key is detected.
-    7. Q: Are there any related controls that my program can call?
-       A: The relevant controls have not been disclosed yet, but a detection server interface is provided for calling, and the relevant code can be found in DEMO.
+    7. Q: Is there any relevant library for calling in my program ?
+       A: The relevant library have not been disclosed yet, but a detection server interface is provided for calling, and the relevant code can be found in DEMO.
 
 ## ScreenShot
 ![image](https://github.com/laomms/PidKeyBatch/blob/master/checks.gif)
