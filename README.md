@@ -1,4 +1,4 @@
-
+切换中文README(README.zh_CN.md)
 
 # PidKeyTool CN/EN Version
 Web version: https://pidkey.top
