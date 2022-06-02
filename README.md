@@ -12,9 +12,8 @@ Web version: https://pidkey.top
 | [question](#question) | Some FAQs |
 | [ScreenShot](#ScreenShot) | Running interface |
 | [ScreenCapture](#ScreenCapture) | Capture package to see if there is a third-party link |
-| [English introduction](#English introduction) | English version software introduction |
-| [Error code](#Error code) | Explanation of common error codes |
-| [Key related website](#Key related website) | Some key websites are recommended |
+| [ErrorCode](#ErrorCode) | Explanation of common error codes |
+| [KeyRelatedSite](#KeyRelatedSite) | Some key websites are recommended |
 
 
 ## Introduction
@@ -50,7 +49,7 @@ v1.5 Added random hardware emulation.
 ## ScreenCapture
 ![image](https://github.com/laomms/PidKeyBatch/blob/master/record.gif)
 
-## error code
+## ErrorCode
     * Error code: 0XC004C003
     Constant: SL_E_CHPA_PRODUCT_KEY_BLOCKED
     Description: The activation server determined the specified product key has been blocked.
@@ -80,7 +79,7 @@ v1.5 Added random hardware emulation.
     Description: The Software Licensing Service reported that the product key is invalid.
      
  
-## Key related website
+## KeyRelatedSite
 [windows10](https://philka.ru/forum/topic/46610-kliuchi-aktivatcii-windows-10-vse-redaktcii/page-309)
 [windows7](https://philka.ru/forum/topic/46608-kliuchi-aktivatcii-windows-7-vsekh-redaktcii/page-134)
 [windows8](https://philka.ru/forum/topic/46609-kliuchi-aktivatcii-windows-8-81-vsekh-redaktcii/page-89)
