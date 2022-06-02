@@ -53,39 +53,30 @@ v1.5 加入随机硬件模拟.
     * 错误代码：0XC004C003
     错误代号：SL_E_CHPA_PRODUCT_KEY_BLOCKED
     描述：激活服务器确定指定的产品密钥已被阻止。
-    翻译：The activation server determined the specified product key has been blocked.
     * 错误代码：0XC004C060
     错误代号：SL_E_CHPA_DYNAMICALLY_BLOCKED_PRODUCT_KEY
     描述：激活服务器确定指定的产品密钥已被阻止。
-    翻译：The activation server determined the specified product key has been blocked.
     * 错误代码：0XC004C020
     错误代号：SL_E_CHPA_DMAK_LIMIT_EXCEEDED
     描述：激活服务器报告该密钥已超出其在线激活次数限制。
-    翻译：The activation server reported that the Multiple Activation Key has exceeded its limit.
     * 错误代码：0XC004C008
     错误代号：SL_E_CHPA_MAXIMUM_UNLOCK_EXCEEDED
     描述：激活服务器报告产品密钥已超出其在线激活次数限制。
-    翻译：The activation server reported that the product key has exceeded its unlock limit.
     * 错误代码：0XC004C004
     错误代号：SL_E_CHPA_INVALID_PRODUCT_KEY
     描述：激活服务器确定指定的产品密钥无效。
-    翻译：The activation server determined the specified product key is invalid.
     * 错误代码：0XC004C00D
     错误代号：SL_E_CHPA_INVALID_ACTCONFIG_ID
     描述：激活服务器确定产品密钥无效。
-    翻译：The activation server determined the product key is not valid.
     * 错误代码：0XC004F069
     错误代号：SL_E_MISMATCHED_PRODUCT_SKU
     描述：软件授权服务报告找不到产品sku，系统未发现该密钥证书。
-    翻译：The Software Licensing Service reported that the product SKU is not found.
     * 错误代码：0XC004E016
     错误代号：SL_E_PKEY_INVALID_CONFIG
     描述：软件授权服务报告产品密钥与系统SKU不一致。
-    翻译：The Software Licensing Service reported that the product key is invalid.
     * 错误代码：0XC004F050
     错误代号：SL_E_INVALID_PRODUCT_KEY
     描述：软件授权服务报告产品密钥与版本不符。
-    翻译：The Software Licensing Service reported that the product key is invalid.
      
 
  <!---
