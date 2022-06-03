@@ -42,7 +42,9 @@ v1.5 Added random hardware emulation.
        A: Right-click in the key management menu, there is a re-detection menu, you can select all the key lists that need to be re-detected for re-detection. If the main program interface is the batch detection interface, all selected keys will be detected. If it is a separate detection interface, only one key is detected.
     7. Q: Will the detection consume the remaining times of the key??
        A: For the retail online key, it will be consumed once, because it must be verified by the Microsoft server and return a user license. The 008 and 020 keys will not be consumed because there is no activation process.
-    8. Q: Is there any relevant library for calling in my program ?
+    8. Q: Why does the anti-virus tool report a virus?
+       A: In order to prevent the code being decompiled, the tool is packed, so the anti-virus software will report the virus. The software itself has no virus, so use it with confidence.
+    9. Q: Is there any relevant library for calling in my program ?
        A: The relevant library have not been disclosed yet, but a detection server interface is provided for calling, and the relevant code can be found in DEMO.
 
 ## ScreenShot
