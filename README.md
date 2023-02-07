@@ -90,4 +90,4 @@ v1.5 Added random hardware emulation.
 [office](https://philka.ru/forum/topic/47480-kliuchi-aktivatcii-microsoft-office-all-version/page-115?hl=office)    
 [All](http://forum.rsload.net/)    
 [other1](https://vn-z.vn/threads/tong-hop-key-windows-va-office.10945/)    
-[other2](https://www.aihao.cc/)    
+[other2](https://www.aihao.cc/forum.php)    
