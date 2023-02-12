@@ -1,5 +1,5 @@
 ﻿# PidKeyTool  CN/EN Version
-网页版: https://pidkey.top
+网页版: [https://pidkey.top](https://pidkey.top/?lang=cn)
 ## 微软密钥检测工具
 
 ## 内容导引
