@@ -34,8 +34,8 @@ v1.5 Added random hardware emulation.
        A: The traditional key detection tool obtains the retail key result by installing the key to the system and get return error code. The tool directly bypasses this step, so it has nothing to do with the system certificate.
     3. Q: I would like to know if a key with a test result of 020 can still obtain a confirmation ID online through Microsoft's Self Service for Mobile site?
        A: Yes. There is a setting in menu to choose whether to get the result of webact. If you do not know the Token value of webact, the software is already built-in, so you do not need to set it. Note that this setting will affect the detection speed.
-    4. Q: Can check whether the Office binding key is still valid?
-       A: Yes. The binding key needs to log in to your own Microsoft account for detection, and the account information will be recorded in the registry (OutlookUsername and OutlookPassword under HKEY_CURRENT_USER\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers), so that you do not need to log in again next time. Pure local operation, no need to worry about leaking your account.
+    4. Q: Can determine whether the redeemable key of Office is valid?
+       A: Yes. The binding key needs to login your "setup.office.com" Microsoft account for detection, and the account information will be recorded in the registry (OutlookUsername and OutlookPassword under HKEY_CURRENT_USER\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers).
     5. Q: Will the original test results database be lost after every software update?
        A: The detection result of the key is stored in KeyList.db in the directory. The database is not encrypted. You can use DB Browser for SQLite (https://sqlitebrowser.org/ ) to open and browse directly. The database in the same directory will not be overwritten. , you can also move the old database to the directory of the upgraded software.
     6. Q: How to detect the resurrection of the key?
