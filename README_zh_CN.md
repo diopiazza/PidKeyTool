@@ -33,7 +33,7 @@ v1.5 加入随机硬件模拟.
     3. 问：我想知道检测结果为020的密钥是否还能通过微软的电话自助网页(Microsoft Self Service for Mobile site)在线获取确认ID？
        答：菜单中有设置是否要获取该项结果的设置，如果你不知道webact的Token值，软件已经内置了，可以不用设置。注意该项设置会影响检测速度。
     4. 问：能不能检测Office绑定密钥还是否有效?
-       答：可以。绑定密钥需要登陆自己的微软账户检测，该账户信息会记录在注册表中(HKEY_CURRENT_USER\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers下的OutlookUsername和OutlookPassword)，以便下次不用再次登陆。纯本地操作，完全不用担心泄露账号。  
+       答：可以。支持不登录账号检测兑换密钥类型,但是如果你要检测是否有效需要登陆自己的微软账户(https://account.microsoft.com/billing/redeem)检测，该账户信息会记录在注册表中(HKEY_CURRENT_USER\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers下的OutlookUsername和OutlookPassword)，以便下次不用再次登陆。纯本地操作，完全不用担心泄露账号。  
     5. 问：每次更新软件后原来的检测结果会不会丢失?  
        答：密钥的检测结果存储于目录的KeyList.db，该数据库没有加密，你可以用DB Browser for SQLite（https://sqlitebrowser.org/ )直接打开浏览，同一目录下该数据库不会被覆盖，你也可以移动旧的数据库到升级后软件的目录。
     6. 问：密钥复活了怎么检测?  
