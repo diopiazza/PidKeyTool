@@ -23,9 +23,9 @@ No need for system certificate environment support. Direct connection to Microso
 The detection results are stored in the KeyList.db database in the software catalog.
 
 ## UpdateRecord
-v3.0 supports detecting the type of Office redemption key without logging in to the account.    
+v3.0 supports offline detecting Office redemption key.    
 v2.5 Added webact detection.    
-v2.0 added binding key detection.    
+v2.0 added redeem key detection.    
 v1.5 Added random hardware emulation.    
 
 ## question
