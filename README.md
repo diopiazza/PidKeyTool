@@ -1,7 +1,7 @@
 切换 [简体中文](README_zh_CN.md)
 
 # PidKeyTool CN/EN Version
-Web version: [https://pidkey.top](https://pidkey.top/pid/)
+Web version: [https://pidkey.top/pid](https://pidkey.top/pid/)
 ## Microsoft Key Detection Tool
 
 ## Content guide
