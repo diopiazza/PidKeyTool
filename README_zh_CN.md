@@ -44,7 +44,7 @@ v1.5 加入随机硬件模拟.
     8. 问：工具为什么会报毒?    
        答：为了防止代码被反编译，所以对工具进行了加壳处理，所以杀毒软件就会报毒。软件本身没有病毒，放心使用。   
     9. 问：有相关控件可以供我的程序调用吗?   
-       答：目前还没有公开相关控件，但是提供一个检测服务器接口供调用，相关代码看DEMO.   
+       答：目前还没有公开相关控件，但是程序做了静默参数供调用，详细看说明.   
 
 ## 软件截图
 ![image](https://github.com/laomms/PidKeyBatch/blob/master/checks.gif)
@@ -53,6 +53,7 @@ v1.5 加入随机硬件模拟.
 ![image](https://github.com/laomms/PidKeyBatch/blob/master/record.gif)
 
 ## 错误代码
+    注意：一般密钥密钥不包含：A,E,I,L,O,S,U这些字母，除非是一些绑定型的兑换密钥。  
     * 错误代码：0XC004C003
     常数名称：SL_E_CHPA_PRODUCT_KEY_BLOCKED
     描述：激活服务器确定指定的产品密钥已被阻止。
