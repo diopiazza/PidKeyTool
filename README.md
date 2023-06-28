@@ -46,7 +46,7 @@ v1.5 Added random hardware emulation.
     8. Q: Why does the anti-virus tool report a virus?
        A: In order to prevent the code being decompiled, the tool is packed, so the anti-virus software will report the virus. The software itself has no virus, so use it with confidence.
     9. Q: Is there any relevant library for calling in my program ?
-       A: The relevant library have not been disclosed yet, but a detection server interface is provided for calling, and the relevant code can be found in DEMO.
+       A: At present, the relevant controls have not been exposed, but the program has made silent parameters for calling, see the description in detail.    
 
 ## ScreenShot
 ![image](https://github.com/laomms/PidKeyBatch/blob/master/checks.gif)
@@ -55,6 +55,7 @@ v1.5 Added random hardware emulation.
 ![image](https://github.com/laomms/PidKeyBatch/blob/master/record.gif)
 
 ## ErrorCode
+    Note: Most keys do not contain the letters A, E, I, L, O, S, U, unless they are bound redemption keys.  
     * Error code: 0XC004C003
     Constant: SL_E_CHPA_PRODUCT_KEY_BLOCKED
     Description: The activation server determined the specified product key has been blocked.
