@@ -1,6 +1,9 @@
 ﻿# PidKeyTool  CN/EN Version
 网页版: [https://pidkey.top](https://pidkey.top/?lang=cn)
-## 微软密钥检测工具
+## 微软密钥检测工具  
+检测机器人:  
+QQ: [3390735069](http://wpa.qq.com/msgrd?v=3&uin=3390735069&site=qq&menu=yes)   
+微信: khun_tony  
 
 ## 内容导引
 | 章节 | 描述 |
