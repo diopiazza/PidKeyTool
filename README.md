@@ -4,7 +4,10 @@
 Web version: [https://pidkey.vip](https://pidkey.vip/)     
 PidKeyBot:  
 Telegram bot: [@laomms](https://t.me/laomms)   [@bkkmms](https://t.me/bkkmms)  
+Telegram group: [GETCID Group1](https://t.me/get_cid)   
+
 QQ bot: [3390735069](http://wpa.qq.com/msgrd?v=3&uin=3390735069&site=qq&menu=yes)   
+
 Wechat bot: khun_tony  
 
 ## Microsoft Key Detection Tool
